@@ -1,0 +1,142 @@
+/* ==========================================================================
+   ZOMZEY — Design tokens
+   "Things are sharp. People are round. Places have doors."
+   ========================================================================== */
+
+@font-face {
+  font-family: "Bricolage";
+  src: url("../fonts/bricolage-grotesque-var.woff2") format("woff2-variations"),
+       url("../fonts/bricolage-grotesque-var.woff2") format("woff2");
+  font-weight: 200 800;
+  font-stretch: 75% 100%;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("../fonts/geist-var.woff2") format("woff2-variations"),
+       url("../fonts/geist-var.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("../fonts/geist-mono-var.woff2") format("woff2-variations"),
+       url("../fonts/geist-mono-var.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ---------- Colour: paper & ink ---------- */
+  --paper: #f3f0e8;        /* canvas */
+  --paper-2: #ebe6da;      /* recessed canvas */
+  --paper-3: #e1dbcc;      /* deepest neutral fill */
+  --card: #fcfbf7;         /* surfaces that sit on the canvas */
+  --ink: #16140f;          /* text, primary actions */
+  --ink-2: #47433b;        /* secondary text   (8.6:1 on paper) */
+  --ink-3: #69645a;        /* meta text        (5.2:1 on paper) */
+  --line: #d9d2c3;         /* hairlines */
+  --line-strong: #b8af9c;  /* perforations, dashes (decorative) */
+  --field: #857f72;        /* input + chip boundaries (≥3:1 on paper & card) */
+
+  /* ---------- Colour: accent + signal ---------- */
+  --violet: #4a2bea;       /* Signal Violet — action, connection, the network (6.5:1 on paper) */
+  --violet-press: #3618c9;
+  --violet-soft: #e8e3ff;
+  --violet-mist: #f1eefe;
+  --violet-on-night: #a597ff;
+
+  --green: #0a7049;        /* Release Green — protected / released money only (5.4:1 on paper) */
+  --green-soft: #dcefe3;
+  --green-on-night: #5fd9a2;
+
+  /* ---------- Colour: night (inverse surfaces) ---------- */
+  --night: #16140f;
+  --night-2: #211e18;
+  --night-3: #2c2821;
+  --night-line: #3d382f;
+  --on-night: #f3f0e8;
+  --on-night-2: #bdb6a8;   /* 9.1:1 on night */
+  --on-night-3: #8f887a;   /* 5.3:1 on night */
+
+  /* ---------- Identity tints (avatars & artefacts only) ---------- */
+  --tint-sand: #e8d8c0;
+  --tint-mist: #d3dbe8;
+  --tint-rose: #e6d2dc;
+  --tint-sage: #d3e1d0;
+  --tint-straw: #ebe0b4;
+  --tint-clay: #e3c9b8;
+
+  /* ---------- Type ---------- */
+  --font-display: "Bricolage", "Arial Narrow", system-ui, sans-serif;
+  --font-ui: "Geist", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --fs-hero: clamp(3.75rem, min(9.2vw, 14.6vh), 10.5rem);  /* Post. Pitch. Paid. */
+  --fs-d1: clamp(2.75rem, 6vw, 6.5rem);                    /* section statements */
+  --fs-d2: clamp(2.125rem, 3.9vw, 4rem);
+  --fs-d3: clamp(1.625rem, 2.3vw, 2.375rem);
+  --fs-h4: clamp(1.25rem, 1.5vw, 1.5rem);
+  --fs-lead: clamp(1.0625rem, 1.25vw, 1.25rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-meta: 0.75rem;
+
+  --lh-tight: 0.88;
+  --lh-display: 0.98;
+  --lh-snug: 1.2;
+  --lh-body: 1.55;
+
+  --track-display: -0.035em;
+  --track-meta: 0.06em;
+
+  /* ---------- Space (4px base) ---------- */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 128px;
+  --s-11: 192px;
+
+  --gutter: clamp(16px, 3.4vw, 64px);       /* page edge */
+  --col-gap: clamp(16px, 2vw, 32px);
+  --section-y: clamp(80px, 11vw, 176px);
+  --max: 1800px;
+
+  /* ---------- Shape ---------- */
+  --r-thing: 2px;            /* slips, money, buttons, inputs — sharp */
+  --r-person: 999px;         /* avatars of people — round */
+  --r-member: 18px;          /* profile modules — soft */
+  --r-arch: 999px 999px 3px 3px; /* places — doorways */
+  --r-door: 220px 220px 2px 2px;
+
+  --bw: 1px;
+  --dash: 6px;               /* perforation dash length */
+
+  /* ---------- Elevation ---------- */
+  --shadow-1: 0 1px 0 rgb(22 20 15 / 0.05), 0 6px 14px -8px rgb(22 20 15 / 0.18);
+  --shadow-float: 0 1px 0 rgb(22 20 15 / 0.04), 0 28px 50px -28px rgb(22 20 15 / 0.38);
+  --shadow-night: 0 30px 60px -30px rgb(0 0 0 / 0.7);
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-fast: 140ms;
+  --t-med: 280ms;
+  --t-slow: 640ms;
+
+  /* ---------- Layers ---------- */
+  --z-header: 50;
+  --z-dock: 60;
+  --z-sheet: 80;
+}

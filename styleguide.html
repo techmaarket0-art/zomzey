@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en-GB" class="no-js" data-intent="need">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZOMZEY — Style guide</title>
+  <meta name="description" content="ZOMZEY design system: shape grammar, colour, type, components and interaction states.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/bricolage-grotesque-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/styleguide.css">
+</head>
+<body>
+<!-- ======================= SVG sprite ======================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 17 17 7M8.5 7H17v8.5"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.4-4.4"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.8-6.5-11a6.5 6.5 0 0 1 13 0c0 5.2-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H10l-6 4V5Z"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3.5 13.9 9l5.6 2-5.6 2L12 18.5 10.1 13 4.5 11l5.6-2L12 3.5Z"/><path d="M19 3v3M17.5 4.5h3"/></symbol>
+    <symbol id="i-beacon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.8"/><path d="M8.3 8.3a5.2 5.2 0 0 0 0 7.4M15.7 8.3a5.2 5.2 0 0 1 0 7.4M5.3 5.3a9.5 9.5 0 0 0 0 13.4M18.7 5.3a9.5 9.5 0 0 1 0 13.4"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 6.5v11M15 6.5v11"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5 18.5 12 8 18.5v-13Z"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="9.5" rx="1"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4.2l2.8 1.8"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></symbol>
+    <symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M8.5 7h7M8.5 11h.01M12 11h.01M15.5 11h.01M8.5 14.5h.01M12 14.5h.01M15.5 14.5h.01M8.5 18h.01M12 18h3.5"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M5 20V11a7 7 0 0 1 14 0v9H5Z"/><path d="M10 20v-5h4v5"/></symbol>
+    <symbol id="i-slip" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 15h16" stroke-dasharray="2 2"/><path d="M8 8.5h8M8 11h5"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></symbol>
+    <symbol id="seal-check" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M14.14 2.64Q16.77 2.09 17.99 4.49Q20.6 5.14 20.65 7.83Q22.72 9.55 21.6 12Q22.72 14.45 20.65 16.17Q20.6 18.86 17.99 19.51Q16.77 21.91 14.14 21.36Q12 23 9.86 21.36Q7.23 21.91 6.01 19.51Q3.4 18.86 3.35 16.17Q1.28 14.45 2.4 12Q1.28 9.55 3.35 7.83Q3.4 5.14 6.01 4.49Q7.23 2.09 9.86 2.64Q12 1 14.14 2.64Z"/><path d="m8 12.3 2.7 2.7L16.2 9.4" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="seal-lock" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M14.14 2.64Q16.77 2.09 17.99 4.49Q20.6 5.14 20.65 7.83Q22.72 9.55 21.6 12Q22.72 14.45 20.65 16.17Q20.6 18.86 17.99 19.51Q16.77 21.91 14.14 21.36Q12 23 9.86 21.36Q7.23 21.91 6.01 19.51Q3.4 18.86 3.35 16.17Q1.28 14.45 2.4 12Q1.28 9.55 3.35 7.83Q3.4 5.14 6.01 4.49Q7.23 2.09 9.86 2.64Q12 1 14.14 2.64Z"/><rect x="8.6" y="11" width="6.8" height="5" rx=".6" fill="#fff"/><path d="M10 11V9.6a2 2 0 0 1 4 0V11" fill="none" stroke="#fff" stroke-width="1.6"/></symbol>
+
+    <!-- Artefacts: the things being promoted (64×80) -->
+    <symbol id="art-book" viewBox="0 0 64 80">
+      <rect x="5" y="1" width="54" height="78" rx="1.5" fill="#5a2128"/>
+      <rect x="5" y="1" width="5" height="78" fill="#000" opacity=".22"/>
+      <circle cx="45" cy="17" r="6.5" fill="#efe3cf"/>
+      <circle cx="48" cy="15" r="6" fill="#5a2128"/>
+      <g fill="#f3ecdf" font-family="Bricolage, sans-serif" font-weight="700" font-stretch="80%" font-size="12.5" letter-spacing="-.4">
+        <text x="15" y="44">THE</text><text x="15" y="55.5">QUIET</text><text x="15" y="67">HOURS</text>
+      </g>
+      <text x="15" y="74.5" fill="#d9b9a4" font-family="Geist Mono, monospace" font-size="4.2" letter-spacing=".5">R. OKAFOR</text>
+    </symbol>
+    <symbol id="art-ep" viewBox="0 0 64 80">
+      <circle cx="40" cy="40" r="22.5" fill="#16140f"/>
+      <circle cx="40" cy="40" r="17" fill="none" stroke="#3a352d" stroke-width=".6"/>
+      <circle cx="40" cy="40" r="12.5" fill="none" stroke="#3a352d" stroke-width=".6"/>
+      <circle cx="40" cy="40" r="6.5" fill="#e6d2dc"/><circle cx="40" cy="40" r="1.3" fill="#16140f"/>
+      <rect x="2" y="17" width="46" height="46" fill="#4a2bea"/>
+      <g fill="#fff" font-family="Bricolage, sans-serif" font-weight="700" font-stretch="78%">
+        <text x="7" y="30" font-size="7.4" letter-spacing="-.2">HALLORAN</text>
+        <text x="7" y="38" font-size="7.4" letter-spacing="-.2">STREET</text>
+        <text x="7" y="58.5" font-size="15" letter-spacing="-.6">EP</text>
+      </g>
+      <path d="M33 49h10M33 53h7" stroke="#fff" stroke-width="1.2" opacity=".6"/>
+    </symbol>
+    <symbol id="art-sauce" viewBox="0 0 64 80">
+      <rect x="27" y="2" width="10" height="11" rx="1" fill="#16140f"/>
+      <path d="M28 13h8v6c0 3 8 5 8 11v44a4 4 0 0 1-4 4H24a4 4 0 0 1-4-4V30c0-6 8-8 8-11v-6Z" fill="#b2432a"/>
+      <rect x="20" y="38" width="24" height="25" fill="#f3ecdf"/>
+      <text x="32" y="47" text-anchor="middle" fill="#16140f" font-family="Bricolage, sans-serif" font-weight="700" font-stretch="78%" font-size="6">FENNICK</text>
+      <text x="32" y="53" text-anchor="middle" fill="#b2432a" font-family="Geist Mono, monospace" font-size="3.4">&amp; CO · HOT</text>
+      <path d="M27 58c3-3 7-3 10 0" stroke="#b2432a" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="art-spf" viewBox="0 0 64 80">
+      <path d="M17 4h30l-2 5H19z" fill="#cdb8c4"/>
+      <path d="M19 9h26l-2 54H21z" fill="#e6d2dc"/>
+      <rect x="20" y="63" width="24" height="15" rx="2" fill="#16140f"/>
+      <text x="32" y="30" text-anchor="middle" fill="#16140f" font-family="Bricolage, sans-serif" font-weight="700" font-stretch="80%" font-size="8.5" letter-spacing="-.2">LOMA</text>
+      <text x="32" y="40" text-anchor="middle" fill="#16140f" font-family="Geist Mono, monospace" font-size="4.6">SPF 50</text>
+      <path d="M26 46h12" stroke="#16140f" stroke-width=".8"/>
+      <text x="32" y="53" text-anchor="middle" fill="#6b5560" font-family="Geist Mono, monospace" font-size="3.2">FRAGRANCE-FREE</text>
+    </symbol>
+    <symbol id="art-app" viewBox="0 0 64 80">
+      <rect x="6" y="14" width="52" height="52" rx="13" fill="#4a2bea"/>
+      <rect x="17" y="40" width="6" height="14" rx="1" fill="#fff" opacity=".55"/>
+      <rect x="27" y="32" width="6" height="22" rx="1" fill="#fff" opacity=".8"/>
+      <rect x="37" y="25" width="6" height="29" rx="1" fill="#fff"/>
+      <circle cx="46" cy="24" r="4" fill="#ebe0b4"/>
+    </symbol>
+    <symbol id="art-shell" viewBox="0 0 64 80">
+      <path d="M14 14 32 3l18 11v60a3 3 0 0 1-3 3H17a3 3 0 0 1-3-3V14Z" fill="#7f9b7c"/>
+      <circle cx="32" cy="14" r="3.4" fill="#f3f0e8"/>
+      <path d="M32 10.6C32 6 38 3 42 2" stroke="#16140f" stroke-width="1" fill="none"/>
+      <text x="32" y="38" text-anchor="middle" fill="#f3f0e8" font-family="Bricolage, sans-serif" font-weight="700" font-stretch="78%" font-size="6.6">NORTH</text>
+      <text x="32" y="45" text-anchor="middle" fill="#f3f0e8" font-family="Bricolage, sans-serif" font-weight="700" font-stretch="78%" font-size="6.6">BOUND</text>
+      <path d="M21 54l6-6 5 4 5-6 6 8z" fill="#f3f0e8" opacity=".9"/>
+      <text x="32" y="68" text-anchor="middle" fill="#e2ecdf" font-family="Geist Mono, monospace" font-size="3.6">RAIN SHELL</text>
+    </symbol>
+    <symbol id="art-toys" viewBox="0 0 64 80">
+      <rect x="30" y="8" width="4" height="62" rx="2" fill="#a17c55"/>
+      <circle cx="32" cy="10" r="5" fill="#b2432a"/>
+      <ellipse cx="32" cy="28" rx="10" ry="6" fill="#ebe0b4"/>
+      <ellipse cx="32" cy="41" rx="14" ry="7" fill="#7f9b7c"/>
+      <ellipse cx="32" cy="55" rx="18" ry="8" fill="#e3c9b8"/>
+      <rect x="9" y="66" width="46" height="8" rx="1.5" fill="#a17c55"/>
+    </symbol>
+    <symbol id="art-ticket" viewBox="0 0 64 80">
+      <path d="M8 6h48v26a5 5 0 0 0 0 10v32H8V42a5 5 0 0 0 0-10V6Z" fill="#16140f"/>
+      <path d="M13 37h38" stroke="#f3f0e8" stroke-width=".9" stroke-dasharray="2 2" opacity=".5"/>
+      <text x="14" y="18" fill="#a597ff" font-family="Geist Mono, monospace" font-size="4.2">THE CROW'S NEST</text>
+      <text x="14" y="29" fill="#f3f0e8" font-family="Bricolage, sans-serif" font-weight="700" font-stretch="78%" font-size="10" letter-spacing="-.3">OPEN MIC</text>
+      <text x="14" y="54" fill="#f3f0e8" font-family="Bricolage, sans-serif" font-weight="700" font-stretch="80%" font-size="15" letter-spacing="-.5">THU</text>
+      <text x="14" y="64" fill="#bdb6a8" font-family="Geist Mono, monospace" font-size="4.4">8PM · FREE ENTRY</text>
+    </symbol>
+    <symbol id="art-palette" viewBox="0 0 64 80">
+      <path d="M32 14c15 0 26 9 26 21 0 8-6 10-11 9-4-1-7 2-5 6 2 5-2 10-10 10-14 0-26-10-26-23s11-23 26-23Z" fill="#f6f1e6" stroke="#16140f" stroke-width="1.2"/>
+      <circle cx="20" cy="30" r="4.2" fill="#4a2bea"/><circle cx="31" cy="23" r="4.2" fill="#b2432a"/>
+      <circle cx="43" cy="26" r="4.2" fill="#ebc95a"/><circle cx="19" cy="44" r="4.2" fill="#7f9b7c"/>
+      <circle cx="36" cy="37" r="3.4" fill="#ebe6da" stroke="#16140f" stroke-width=".8"/>
+      <path d="M44 74 58 58" stroke="#a17c55" stroke-width="3" stroke-linecap="round"/><path d="M58 58l3-4" stroke="#16140f" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+<main class="sg">
+
+  <header class="sg-top">
+    <div class="sg-top__brand">
+      <a class="logo" href="index.html" aria-label="Back to the ZOMZEY homepage">
+        <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="2" fill="currentColor"/><path d="M9.5 10.5h13l-13 11h13" fill="none" stroke="#f3f0e8" stroke-width="2.6" stroke-linejoin="round"/><circle cx="9.5" cy="10.5" r="2.6" fill="var(--violet)"/><circle cx="22.5" cy="21.5" r="2.6" fill="var(--violet)"/></svg>
+        <span class="logo__word">ZOMZEY</span>
+      </a>
+      <p class="kicker">Design system · v1.0 · Homepage concept</p>
+      <h1 style="margin-top:18px">Post. Pitch. Paid.<br>The system.</h1>
+    </div>
+    <div class="sg-top__rule" aria-label="Shape grammar">
+      <p><span class="g g--sq" aria-hidden="true"></span>Pioneers and opportunities are square.</p>
+      <p><span class="g g--ci" aria-hidden="true"></span>People are round.</p>
+      <p><span class="g g--ar" aria-hidden="true"></span>Places have doors.</p>
+      <p><svg class="seal seal--verified" aria-hidden="true"><use href="#seal-check"/></svg>Protection is a seal.</p>
+    </div>
+  </header>
+
+  <!-- 01 Shape grammar -->
+  <section class="sg-sec" aria-labelledby="sg-shape">
+    <div class="sg-sec__label"><p class="meta">01</p><h2 id="sg-shape">Shape grammar</h2><p>Every module tells you what it is before you read it.</p></div>
+    <div class="sg-sec__body">
+      <div class="sg-grammar">
+        <div><div class="shape"><i style="width:64px;height:64px;border-radius:2px"></i></div><b>Square · sharp</b><p>Opportunities, briefs, offers, money. Pioneer avatars. Radius 2px.</p></div>
+        <div><div class="shape"><i style="width:64px;height:64px;border-radius:50%"></i></div><b>Circle</b><p>People — Influencers, creators, musicians, podcasters.</p></div>
+        <div><div class="shape"><i style="width:56px;height:68px;border-radius:99px 99px 3px 3px"></i></div><b>Arch · doorway</b><p>Places — Hubs: bookshops, venues, cafés, libraries, clubs.</p></div>
+        <div><div class="shape"><svg style="width:68px;height:68px;color:var(--ink)" aria-hidden="true"><use href="#seal-lock"/></svg><svg style="width:68px;height:68px;color:var(--violet)" aria-hidden="true"><use href="#seal-check"/></svg></div><b>Seal</b><p>Verified members and Protected Payments states.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 Colour -->
+  <section class="sg-sec" aria-labelledby="sg-colour">
+    <div class="sg-sec__label"><p class="meta">02</p><h2 id="sg-colour">Colour</h2><p>Paper and ink do the work. One accent for action and connection; one signal reserved for protected money.</p></div>
+    <div class="sg-sec__body">
+      <div>
+        <p class="sg-cap">Primary &amp; signal</p>
+        <div class="sg-swatches">
+          <div class="sw sw--wide"><div class="sw__chip" style="background:var(--violet);color:#fff">Aa 6.5:1 on paper · white 7.4:1</div><div class="sw__meta"><b>Signal Violet</b><span>#4A2BEA · actions, links, connections</span></div></div>
+          <div class="sw sw--wide"><div class="sw__chip" style="background:var(--ink);color:var(--paper)">Aa 16.2:1 on paper</div><div class="sw__meta"><b>Ink</b><span>#16140F · text, primary buttons, night</span></div></div>
+          <div class="sw sw--wide"><div class="sw__chip" style="background:var(--green);color:#fff">Aa 5.4:1 on paper</div><div class="sw__meta"><b>Release Green</b><span>#0A7049 · held / released money only</span></div></div>
+        </div>
+      </div>
+      <div>
+        <p class="sg-cap">Neutrals</p>
+        <div class="sg-swatches">
+          <div class="sw"><div class="sw__chip" style="background:var(--paper)"></div><div class="sw__meta"><b>Paper</b><span>#F3F0E8 · canvas</span></div></div>
+          <div class="sw"><div class="sw__chip" style="background:var(--paper-2)"></div><div class="sw__meta"><b>Paper 2</b><span>#EBE6DA · recessed</span></div></div>
+          <div class="sw"><div class="sw__chip" style="background:var(--card)"></div><div class="sw__meta"><b>Card</b><span>#FCFBF7 · surfaces</span></div></div>
+          <div class="sw"><div class="sw__chip" style="background:var(--ink-2);color:#fff">8.6:1</div><div class="sw__meta"><b>Ink 2</b><span>#47433B · body</span></div></div>
+          <div class="sw"><div class="sw__chip" style="background:var(--ink-3);color:#fff">5.2:1</div><div class="sw__meta"><b>Ink 3</b><span>#69645A · meta</span></div></div>
+          <div class="sw"><div class="sw__chip" style="background:var(--line)"></div><div class="sw__meta"><b>Line</b><span>#D9D2C3 · hairlines</span></div></div>
+        </div>
+      </div>
+      <div>
+        <p class="sg-cap">Supporting · identity tints for avatars &amp; artefacts only</p>
+        <div class="sg-swatches">
+          <div class="sw"><div class="sw__chip" style="background:var(--violet-soft)"></div><div class="sw__meta"><b>Violet soft</b><span>#E8E3FF</span></div></div>
+          <div class="sw"><div class="sw__chip" style="background:var(--green-soft)"></div><div class="sw__meta"><b>Green soft</b><span>#DCEFE3</span></div></div>
+          <div class="sw"><div class="sw__chip" style="background:var(--tint-sage)"></div><div class="sw__meta"><b>Sage</b><span>#D3E1D0</span></div></div>
+          <div class="sw"><div class="sw__chip" style="background:var(--tint-rose)"></div><div class="sw__meta"><b>Rose</b><span>#E6D2DC</span></div></div>
+          <div class="sw"><div class="sw__chip" style="background:var(--tint-mist)"></div><div class="sw__meta"><b>Mist</b><span>#D3DBE8</span></div></div>
+          <div class="sw"><div class="sw__chip" style="background:var(--tint-straw)"></div><div class="sw__meta"><b>Straw</b><span>#EBE0B4</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 Type -->
+  <section class="sg-sec" aria-labelledby="sg-type">
+    <div class="sg-sec__label"><p class="meta">03</p><h2 id="sg-type">Typography</h2><p>A characterful display face for statements, a quiet interface face for reading, and a mono for precise listing data.</p></div>
+    <div class="sg-sec__body">
+      <div class="sg-specimen">
+        <div><p class="sg-cap">Display · Bricolage Grotesque</p><p class="big">Post.<br>Pitch.</p><p class="desc">Variable weight, width and optical size. Set at 78–86% width, tight tracking. Headlines, statements, listing titles.</p></div>
+        <div><p class="sg-cap">Interface · Geist</p><p class="ui">Aa Gg 12</p><p class="desc">Body copy, navigation, buttons, forms. Highly legible from 12px.</p></div>
+        <div><p class="sg-cap">Data · Geist Mono</p><p class="mono">£180 · 2h</p><p class="desc">Prices, locations, timestamps, statuses — listings read like precise tickets.</p></div>
+      </div>
+      <div class="sg-scale">
+        <div><span class="meta">Hero</span><span class="meta">60–168 · 0.85 · −3.4%</span><span class="sample" style="font-family:var(--font-display);font-weight:700;font-stretch:80%;font-size:64px;line-height:.9;letter-spacing:-.034em">Post. Pitch. Paid.</span></div>
+        <div><span class="meta">Display 1</span><span class="meta">44–104 · 0.88</span><span class="sample d1" style="font-size:52px">One brief. Four offers.</span></div>
+        <div><span class="meta">Display 2</span><span class="meta">34–64 · 0.98</span><span class="sample d2" style="font-size:40px">Opportunities, just posted.</span></div>
+        <div><span class="meta">Display 3</span><span class="meta">26–38 · 1.04</span><span class="sample d3">The right people pitch to you.</span></div>
+        <div><span class="meta">Heading 4</span><span class="meta">20–24 · 1.15</span><span class="sample h4">Campaign Brief Generator</span></div>
+        <div><span class="meta">Lead</span><span class="meta">17–20 · 1.5</span><span class="sample lead" style="max-width:none">Pioneers post, members pitch to win.</span></div>
+        <div><span class="meta">Body</span><span class="meta">16 · 1.55</span><span class="sample body">Money is held safely and only released when the work is approved.</span></div>
+        <div><span class="meta">Meta</span><span class="meta">12 · mono · caps</span><span class="sample meta">Wants · Where · Budget · Posted 2h ago</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 Actions -->
+  <section class="sg-sec" aria-labelledby="sg-actions">
+    <div class="sg-sec__label"><p class="meta">04</p><h2 id="sg-actions">Buttons &amp; links</h2><p>"Ticket stub" buttons: a sharp body and a perforated arrow stub. Avoids pills; reads as an action you can tear off.</p></div>
+    <div class="sg-sec__body">
+      <div>
+        <p class="sg-cap">Variants</p>
+        <div class="sg-row">
+          <a class="btn btn--primary" href="#"><span class="btn__label">Find people</span><span class="btn__stub"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+          <a class="btn btn--accent" href="#"><span class="btn__label">Browse opportunities</span><span class="btn__stub"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+          <a class="btn btn--ghost" href="#"><span class="btn__label">Browse all</span><span class="btn__stub"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+          <a class="btn btn--primary btn--sm" href="#"><span class="btn__label">Join free</span><span class="btn__stub"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+          <a class="link" href="#">Text link</a>
+          <a class="link link--arrow" href="#">Link with arrow <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <p class="sg-cap">States · default / hover / focus / disabled</p>
+        <div class="sg-row">
+          <a class="btn btn--primary" href="#"><span class="btn__label">Default</span><span class="btn__stub"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+          <a class="btn btn--primary is-hover" href="#"><span class="btn__label">Hover</span><span class="btn__stub"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+          <a class="btn btn--primary is-focus" href="#"><span class="btn__label">Focus</span><span class="btn__stub"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+          <button class="btn btn--primary" disabled><span class="btn__label">Disabled</span><span class="btn__stub"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+          <a class="link is-hover" href="#">Link hover</a>
+        </div>
+      </div>
+      <div class="sg-night on-night">
+        <a class="btn btn--paper" href="#"><span class="btn__label">Join ZOMZEY — free</span><span class="btn__stub"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="btn btn--accent" href="#"><span class="btn__label">On night</span><span class="btn__stub"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="link" href="#">Link on night</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 Tags, chips, status -->
+  <section class="sg-sec" aria-labelledby="sg-tags">
+    <div class="sg-sec__label"><p class="meta">05</p><h2 id="sg-tags">Tags, chips &amp; status</h2><p>Mono tags label categories. Square chips filter. Status dots carry deal state — colour plus shape, never colour alone.</p></div>
+    <div class="sg-sec__body">
+      <div class="sg-two">
+        <div>
+          <p class="sg-cap">Category tags</p>
+          <div class="sg-row" style="font-size:16px">
+            <span class="tag"><span class="g g--sq" aria-hidden="true"></span>Books</span>
+            <span class="tag"><span class="g g--sq" aria-hidden="true"></span>Music</span>
+            <span class="tag"><span class="g g--ci" aria-hidden="true"></span>Influencer</span>
+            <span class="tag"><span class="g g--ar" aria-hidden="true"></span>Hub</span>
+            <span class="tag tag--ink">Featured</span>
+            <span class="tag tag--violet">ZAi</span>
+            <span class="tag tag--green">Protected</span>
+          </div>
+        </div>
+        <div>
+          <p class="sg-cap">Deal status</p>
+          <div class="sg-row" style="font-size:16px">
+            <span class="status status--draft">Draft</span>
+            <span class="status status--open">Open</span>
+            <span class="status status--live">Live</span>
+            <span class="status status--agreed">Agreed</span>
+            <span class="status status--held">Held</span>
+            <span class="status status--released">Released</span>
+          </div>
+        </div>
+      </div>
+      <div class="sg-two">
+        <div>
+          <p class="sg-cap">Filter chips · default / hover / selected</p>
+          <div class="sg-row">
+            <button class="chip" aria-pressed="false">Books</button>
+            <button class="chip is-hover" aria-pressed="false">Music</button>
+            <button class="chip" aria-pressed="true">Food &amp; drink</button>
+          </div>
+        </div>
+        <div>
+          <p class="sg-cap">Toggles · segmented · switch</p>
+          <div class="sg-row">
+            <label class="toggle"><input type="checkbox" checked><span><span class="g g--ci" aria-hidden="true"></span>Influencers</span></label>
+            <label class="toggle"><input type="checkbox"><span><span class="g g--ar" aria-hidden="true"></span>Hubs</span></label>
+            <label class="switch"><input type="checkbox" checked> Only verified</label>
+          </div>
+          <div class="segmented" style="margin-top:14px;max-width:380px" role="group" aria-label="Intent example">
+            <button type="button" aria-pressed="true"><span class="g g--sq" aria-hidden="true"></span>Promote</button>
+            <button type="button" aria-pressed="false"><span class="g g--ci" aria-hidden="true"></span>Earn</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 Modules -->
+  <section class="sg-sec" aria-labelledby="sg-modules">
+    <div class="sg-sec__label"><p class="meta">06</p><h2 id="sg-modules">Marketplace modules</h2><p>The same parts build the hero network, the deal record, the board and future product screens.</p></div>
+    <div class="sg-sec__body">
+      <div class="sg-cards">
+        <div>
+          <p class="sg-cap">Opportunity slip</p>
+          <article class="slip">
+            <header class="slip__head"><span class="tag"><span class="g g--sq" aria-hidden="true"></span>Books</span><span class="status status--open">Open</span></header>
+            <div class="slip__body">
+              <div class="art"><svg viewBox="0 0 64 80" aria-hidden="true"><use href="#art-book"/></svg></div>
+              <div>
+                <h3 class="slip__title">The Quiet Hours</h3>
+                <p class="slip__sub">Debut crime novel</p>
+                <dl class="slip__meta"><div><dt>Wants</dt><dd>Book clubs&nbsp;· Bookshops</dd></div><div><dt>Budget</dt><dd class="slip__price">Up to £250</dd></div></dl>
+              </div>
+            </div>
+            <footer class="slip__stub"><span class="slip__offers"><span class="roster" aria-hidden="true"><span class="av av--hub" data-tint="sage">BS</span><span class="av av--person" data-tint="rose">MC</span><span class="av av--hub" data-tint="straw">CR</span></span>4 offers</span><span class="slip__time">2h ago</span></footer>
+          </article>
+        </div>
+        <div class="sg-panel">
+          <p class="sg-cap" style="margin:0">Member · person &amp; place</p>
+          <div class="member"><span class="av av--person" data-tint="rose">MC</span><div><p class="member__name">Maya Chen <svg class="seal seal--verified" aria-label="Verified"><use href="#seal-check"/></svg></p><p class="member__role">BookTok creator&nbsp;· Manchester</p><p class="member__stats"><span><b>8.2k</b> followers</span><span><b>6.1%</b> eng.</span></p></div></div>
+          <div class="member"><span class="av av--hub" data-tint="sage">BS</span><div><p class="member__name">BrightShelf Books <svg class="seal seal--verified" aria-label="Verified"><use href="#seal-check"/></svg></p><p class="member__role">Independent bookshop&nbsp;· Manchester</p></div></div>
+          <div class="member"><span class="roster"><span class="av av--person av--sm" data-tint="mist">JA</span><span class="av av--person av--sm" data-tint="clay">KO</span><span class="av av--person av--sm" data-tint="sand">+</span></span><div><p class="member__name">Northline Talent</p><p class="member__role">Agency&nbsp;· pitching a roster</p></div></div>
+        </div>
+        <div class="sg-panel">
+          <p class="sg-cap" style="margin:0">Offer · protected payment</p>
+          <div class="offer"><span class="av av--hub" data-tint="sage">BS</span><div><p class="offer__who">Offer to R. Okafor</p><p class="offer__what">Front table, 4 weeks + author evening</p></div><span class="offer__price">£180</span></div>
+          <div class="offer offer--active"><span class="av av--person" data-tint="rose">MC</span><div><p class="offer__who">Selected offer</p><p class="offer__what">Review video + 3 stories</p></div><span class="offer__price">£120</span></div>
+          <div class="held"><svg class="held__seal" aria-hidden="true"><use href="#seal-lock"/></svg><div><p class="held__amount"><span class="num">£180</span> held</p><p class="held__copy">Released when the work is approved.</p></div><p class="held__by">Protected Payments · powered by Stripe</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 Forms -->
+  <section class="sg-sec" aria-labelledby="sg-forms">
+    <div class="sg-sec__label"><p class="meta">07</p><h2 id="sg-forms">Search &amp; forms</h2><p>Sharp fields, 52px targets, violet focus with a soft halo. The sentence builder turns search into plain language.</p></div>
+    <div class="sg-sec__body">
+      <div class="sg-two">
+        <div style="display:grid;gap:18px">
+          <div class="search"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><input class="input" type="search" placeholder="Search people, places and opportunities" aria-label="Search"><a class="btn btn--primary btn--sm" href="#"><span class="btn__label">Search</span></a></div>
+          <div class="field"><label class="field__label" for="sg-f1">What are you promoting?</label><input class="input is-focus" id="sg-f1" value="A debut crime novel"><span class="field__hint">Focus state</span></div>
+          <div class="field"><label class="field__label" for="sg-f2">Budget</label><select class="select" id="sg-f2"><option>£100–£250</option></select></div>
+          <div class="field"><label class="field__label" for="sg-f3">Email</label><input class="input" id="sg-f3" aria-invalid="true" value="maya@"><span class="field__hint" style="color:#b3261e">Enter a full email address</span></div>
+        </div>
+        <div style="display:grid;gap:22px;align-content:start">
+          <div>
+            <p class="sg-cap">Sentence builder</p>
+            <p class="builder" style="margin:0">I’m <select class="pick" aria-label="I am"><option>an author</option></select> looking for <select class="pick" aria-label="Looking for"><option>book clubs</option></select></p>
+          </div>
+          <div>
+            <p class="sg-cap">Range</p>
+            <input class="range" type="range" value="40" style="--fill:40%" aria-label="Followers example">
+          </div>
+          <div>
+            <p class="sg-cap">Navigation · mobile dock (contextual CTA)</p>
+            <div class="sg-dock-demo">
+              <nav class="dock" aria-label="Dock example">
+                <a class="dock__item" href="#"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><span>Discover</span></a>
+                <a class="dock__item" href="#"><svg class="icon" aria-hidden="true"><use href="#i-slip"/></svg><span>Opportunities</span></a>
+                <a class="dock__cta" href="#"><span class="g g--sq" aria-hidden="true"></span><span>Post free</span></a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 Space, shape, motion -->
+  <section class="sg-sec" aria-labelledby="sg-space">
+    <div class="sg-sec__label"><p class="meta">08</p><h2 id="sg-space">Space, radius &amp; motion</h2><p>A 4px base. Generous section rhythm; dense, precise listings. Motion only explains.</p></div>
+    <div class="sg-sec__body">
+      <div class="sg-two">
+        <div class="sg-space">
+          <div><span>s-1</span><span>4</span><i style="width:4px"></i></div>
+          <div><span>s-2</span><span>8</span><i style="width:8px"></i></div>
+          <div><span>s-3</span><span>12</span><i style="width:12px"></i></div>
+          <div><span>s-4</span><span>16</span><i style="width:16px"></i></div>
+          <div><span>s-5</span><span>24</span><i style="width:24px"></i></div>
+          <div><span>s-6</span><span>32</span><i style="width:32px"></i></div>
+          <div><span>s-7</span><span>48</span><i style="width:48px"></i></div>
+          <div><span>s-8</span><span>64</span><i style="width:64px"></i></div>
+          <div><span>s-9</span><span>96</span><i style="width:96px"></i></div>
+          <div><span>s-10</span><span>128</span><i style="width:128px"></i></div>
+          <div><span>section</span><span>80–176</span><i style="width:176px;background:var(--ink)"></i></div>
+        </div>
+        <div class="sg-radius">
+          <div><span class="r" style="border-radius:2px"></span><span><b>2px · thing</b>slips, buttons, inputs</span></div>
+          <div><span class="r" style="border-radius:18px"></span><span><b>18px · member</b>profile modules</span></div>
+          <div><span class="r" style="border-radius:999px;height:90px;width:90px"></span><span><b>Circle</b>people</span></div>
+          <div><span class="r" style="border-radius:999px 999px 3px 3px;width:76px"></span><span><b>Arch</b>places</span></div>
+          <div><span class="r" style="border-radius:2px;border-style:dashed;border-color:var(--line-strong)"></span><span><b>Perforation</b>dashed 7px · notch 8px</span></div>
+        </div>
+      </div>
+      <div class="sg-motion">
+        <div><b>Offers travel</b>Dots move from members to opportunities along connection lines. <code>4.2s cycle · ease-in-out</code></div>
+        <div><b>Stamps land</b>Held and Released seals stamp onto the deal record as it scrolls into view. <code>520ms · slight overshoot</code></div>
+        <div><b>Lines draw</b>Index connections draw from the chosen Pioneer to who pitches. <code>640ms · ease-out · 40ms stagger</code></div>
+        <div><b>Hover</b>Cards lift 3px and gain an ink border; buttons shift to violet; arrows nudge 3px. <code>140–280ms</code></div>
+        <div><b>Focus</b>2px violet outline, 3px offset — on paper and night. Never removed.</div>
+        <div><b>Reduced motion</b>All movement stops; everything is already composed and complete. A visible pause control sits on the hero.</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

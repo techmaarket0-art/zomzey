@@ -1,0 +1,332 @@
+{
+  "base": "http://localhost:4310/",
+  "when": "2026-10-07T20:56:43.710Z",
+  "overflow": [
+    {
+      "page": "index.html",
+      "w": 320,
+      "ok": true,
+      "scrollW": 320,
+      "clientW": 320,
+      "clipped": []
+    },
+    {
+      "page": "index.html",
+      "w": 360,
+      "ok": true,
+      "scrollW": 360,
+      "clientW": 360,
+      "clipped": []
+    },
+    {
+      "page": "index.html",
+      "w": 390,
+      "ok": true,
+      "scrollW": 390,
+      "clientW": 390,
+      "clipped": []
+    },
+    {
+      "page": "index.html",
+      "w": 414,
+      "ok": true,
+      "scrollW": 414,
+      "clientW": 414,
+      "clipped": []
+    },
+    {
+      "page": "index.html",
+      "w": 600,
+      "ok": true,
+      "scrollW": 600,
+      "clientW": 600,
+      "clipped": []
+    },
+    {
+      "page": "index.html",
+      "w": 768,
+      "ok": true,
+      "scrollW": 768,
+      "clientW": 768,
+      "clipped": []
+    },
+    {
+      "page": "index.html",
+      "w": 900,
+      "ok": true,
+      "scrollW": 900,
+      "clientW": 900,
+      "clipped": []
+    },
+    {
+      "page": "index.html",
+      "w": 1024,
+      "ok": true,
+      "scrollW": 1024,
+      "clientW": 1024,
+      "clipped": []
+    },
+    {
+      "page": "index.html",
+      "w": 1180,
+      "ok": true,
+      "scrollW": 1180,
+      "clientW": 1180,
+      "clipped": []
+    },
+    {
+      "page": "index.html",
+      "w": 1280,
+      "ok": true,
+      "scrollW": 1280,
+      "clientW": 1280,
+      "clipped": []
+    },
+    {
+      "page": "index.html",
+      "w": 1366,
+      "ok": true,
+      "scrollW": 1366,
+      "clientW": 1366,
+      "clipped": []
+    },
+    {
+      "page": "index.html",
+      "w": 1440,
+      "ok": true,
+      "scrollW": 1440,
+      "clientW": 1440,
+      "clipped": []
+    },
+    {
+      "page": "index.html",
+      "w": 1680,
+      "ok": true,
+      "scrollW": 1680,
+      "clientW": 1680,
+      "clipped": []
+    },
+    {
+      "page": "index.html",
+      "w": 1920,
+      "ok": true,
+      "scrollW": 1920,
+      "clientW": 1920,
+      "clipped": []
+    },
+    {
+      "page": "index.html",
+      "w": 2560,
+      "ok": true,
+      "scrollW": 2560,
+      "clientW": 2560,
+      "clipped": []
+    },
+    {
+      "page": "styleguide.html",
+      "w": 320,
+      "ok": true,
+      "scrollW": 320,
+      "clientW": 320,
+      "clipped": []
+    },
+    {
+      "page": "styleguide.html",
+      "w": 360,
+      "ok": true,
+      "scrollW": 360,
+      "clientW": 360,
+      "clipped": []
+    },
+    {
+      "page": "styleguide.html",
+      "w": 390,
+      "ok": true,
+      "scrollW": 390,
+      "clientW": 390,
+      "clipped": []
+    },
+    {
+      "page": "styleguide.html",
+      "w": 414,
+      "ok": true,
+      "scrollW": 414,
+      "clientW": 414,
+      "clipped": []
+    },
+    {
+      "page": "styleguide.html",
+      "w": 600,
+      "ok": true,
+      "scrollW": 600,
+      "clientW": 600,
+      "clipped": []
+    },
+    {
+      "page": "styleguide.html",
+      "w": 768,
+      "ok": true,
+      "scrollW": 768,
+      "clientW": 768,
+      "clipped": []
+    },
+    {
+      "page": "styleguide.html",
+      "w": 900,
+      "ok": true,
+      "scrollW": 900,
+      "clientW": 900,
+      "clipped": []
+    },
+    {
+      "page": "styleguide.html",
+      "w": 1024,
+      "ok": true,
+      "scrollW": 1024,
+      "clientW": 1024,
+      "clipped": []
+    },
+    {
+      "page": "styleguide.html",
+      "w": 1180,
+      "ok": true,
+      "scrollW": 1180,
+      "clientW": 1180,
+      "clipped": []
+    },
+    {
+      "page": "styleguide.html",
+      "w": 1280,
+      "ok": true,
+      "scrollW": 1280,
+      "clientW": 1280,
+      "clipped": []
+    },
+    {
+      "page": "styleguide.html",
+      "w": 1366,
+      "ok": true,
+      "scrollW": 1366,
+      "clientW": 1366,
+      "clipped": []
+    },
+    {
+      "page": "styleguide.html",
+      "w": 1440,
+      "ok": true,
+      "scrollW": 1440,
+      "clientW": 1440,
+      "clipped": []
+    },
+    {
+      "page": "styleguide.html",
+      "w": 1680,
+      "ok": true,
+      "scrollW": 1680,
+      "clientW": 1680,
+      "clipped": []
+    },
+    {
+      "page": "styleguide.html",
+      "w": 1920,
+      "ok": true,
+      "scrollW": 1920,
+      "clientW": 1920,
+      "clipped": []
+    },
+    {
+      "page": "styleguide.html",
+      "w": 2560,
+      "ok": true,
+      "scrollW": 2560,
+      "clientW": 2560,
+      "clipped": []
+    }
+  ],
+  "axe": [
+    {
+      "page": "index.html",
+      "w": 1440,
+      "violations": [],
+      "passes": 50,
+      "incomplete": 2
+    },
+    {
+      "page": "index.html",
+      "w": 390,
+      "violations": [],
+      "passes": 51,
+      "incomplete": 2
+    },
+    {
+      "page": "styleguide.html",
+      "w": 1440,
+      "violations": [],
+      "passes": 40,
+      "incomplete": 2
+    }
+  ],
+  "keyboard": {
+    "stops": [
+      "a \"Skip to content\" focusRing=true",
+      "a \"ZOMZEY home\" focusRing=true",
+      "a \"Discover\" focusRing=true",
+      "a \"Opportunities\" focusRing=true",
+      "a \"How it works\" focusRing=true",
+      "a \"Protected Payments\" focusRing=true",
+      "button \"Tools\" focusRing=true",
+      "a \"Log in\" focusRing=true",
+      "a \"Join free\" focusRing=true",
+      "button#tab-need \"I need promotion\" focusRing=true",
+      "select \"I am\" focusRing=true",
+      "select \"Looking for\" focusRing=true",
+      "select \"Where\" focusRing=true",
+      "button \"Find people\" focusRing=true",
+      "a \"or post an opportunity — free\" focusRing=true",
+      "button \"Pause motion\" focusRing=true",
+      "a \"01 Posted\" focusRing=true",
+      "a \"02 Pitched\" focusRing=true",
+      "a \"03 Agreed\" focusRing=true",
+      "a \"04 Protected\" focusRing=true",
+      "a \"05 Released\" focusRing=true",
+      "ul \"Offers received\" focusRing=true",
+      "button \"Authors\" focusRing=true",
+      "button \"Musicians & bands\" focusRing=true"
+    ],
+    "intentArrowKeys": {
+      "active": "tab-earn",
+      "selected": "true",
+      "earnHidden": false
+    }
+  },
+  "reducedMotion": {
+    "dotsVisible": 0,
+    "stampOpacity": "1",
+    "revealTargets": 0,
+    "runningAnimations": 0,
+    "tickerChanged": false
+  },
+  "perf": [
+    {
+      "viewport": "1440x900",
+      "transferKB": 356,
+      "requests": 8,
+      "dcl": 174,
+      "load": 188,
+      "lcp": 280,
+      "cls": 0,
+      "domNodes": 1293
+    },
+    {
+      "viewport": "390x844",
+      "transferKB": 356,
+      "requests": 8,
+      "dcl": 167,
+      "load": 183,
+      "lcp": 212,
+      "cls": 0,
+      "domNodes": 1255
+    }
+  ],
+  "console": []
+}

@@ -1,0 +1,19 @@
+{
+  "name": "zomzey-homepage-concept",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ZOMZEY homepage redesign concept — Post. Pitch. Paid. The Opportunity Network.",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "start": "node scripts/dev.mjs",
+    "shots": "node scripts/shoot.mjs screenshots/qa 390 768 1024 1440 1920",
+    "qa": "node scripts/qa.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "axe-core": "^4.10.2"
+  }
+}
