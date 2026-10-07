@@ -8,7 +8,8 @@
     "dev": "node scripts/dev.mjs",
     "start": "node scripts/dev.mjs",
     "shots": "node scripts/shoot.mjs screenshots/qa 390 768 1024 1440 1920",
-    "qa": "node scripts/qa.mjs"
+    "qa": "node scripts/qa.mjs",
+    "capture": "node scripts/capture.mjs"
   },
   "engines": {
     "node": ">=18"

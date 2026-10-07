@@ -1,6 +1,6 @@
 {
   "base": "http://localhost:4310/",
-  "when": "2026-10-07T20:56:43.710Z",
+  "when": "2026-10-07T21:03:10.504Z",
   "overflow": [
     {
       "page": "index.html",
@@ -311,9 +311,9 @@
       "viewport": "1440x900",
       "transferKB": 356,
       "requests": 8,
-      "dcl": 174,
-      "load": 188,
-      "lcp": 280,
+      "dcl": 145,
+      "load": 158,
+      "lcp": 256,
       "cls": 0,
       "domNodes": 1293
     },
@@ -321,9 +321,9 @@
       "viewport": "390x844",
       "transferKB": 356,
       "requests": 8,
-      "dcl": 167,
-      "load": 183,
-      "lcp": 212,
+      "dcl": 127,
+      "load": 138,
+      "lcp": 168,
       "cls": 0,
       "domNodes": 1255
     }

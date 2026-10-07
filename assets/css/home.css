@@ -571,9 +571,9 @@
 .door--earn .door__links .link { color: var(--on-night); }
 
 .calc { margin-top: 24px; padding: 20px 20px 18px; border: 1px solid var(--night-line); border-radius: var(--r-thing); background: var(--night-2); }
-.calc__top { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.calc__top { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 4px 16px; }
 .calc__label { font-weight: 600; font-size: 1rem; }
-.calc__out { font-family: var(--font-display); font-weight: 680; font-stretch: 82%; font-size: 2.5rem; line-height: 1; letter-spacing: -0.035em; color: var(--on-night); }
+.calc__out { white-space: nowrap; font-family: var(--font-display); font-weight: 680; font-stretch: 82%; font-size: 2.5rem; line-height: 1; letter-spacing: -0.035em; color: var(--on-night); }
 .calc__out .num { font-family: inherit; }
 .calc .range { margin: 14px 0 6px; }
 .calc .range::-webkit-slider-runnable-track { background: linear-gradient(90deg, var(--violet-on-night) var(--fill, 35%), var(--night-line) 0); }
@@ -806,18 +806,18 @@
     position: relative; left: auto; top: auto; width: 272px; flex: none;
     scroll-snap-align: start;
     filter: drop-shadow(0 10px 14px rgb(22 20 15 / 0.1));
-    display: flex; flex-direction: column; justify-content: flex-end;
+    display: flex; flex-direction: column; justify-content: flex-start;
   }
   .node > * { flex: none; }
   .node[data-node="slipA"] { order: 1; width: 304px; }
-  .node[data-node="offerBS"] { order: 2; justify-content: center; }
-  .node[data-node="maya"] { order: 3; justify-content: center; }
-  .node[data-node="seal"] { order: 4; width: 288px; justify-content: center; }
+  .node[data-node="offerBS"] { order: 2; }
+  .node[data-node="maya"] { order: 3; }
+  .node[data-node="seal"] { order: 4; width: 288px; }
   .node[data-node="slipB"] { order: 5; }
-  .node[data-node="brightshelf"] { order: 6; justify-content: center; }
-  .node[data-node="offerMaya"] { order: 7; justify-content: center; }
-  .node[data-node="lantern"] { order: 8; justify-content: center; }
-  .node[data-node="agency"] { order: 9; justify-content: center; width: 240px; display: flex; }
+  .node[data-node="brightshelf"] { order: 6; }
+  .node[data-node="offerMaya"] { order: 7; }
+  .node[data-node="lantern"] { order: 8; }
+  .node[data-node="agency"] { order: 9; width: 240px; display: flex; }
   .stage[data-focus] .node:not(.is-zone) { opacity: 1; }
 
   /* Record: sticky stage chips, chapters of the receipt */
