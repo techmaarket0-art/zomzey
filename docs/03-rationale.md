@@ -67,8 +67,13 @@ commission rates.
   than a startup template, which suits a platform asking people to trust it with money.
 - **One electric violet** for actions and connections; **one green** used *only* for protected or
   released money, so the colour itself becomes a trust signal.
-- **Bricolage Grotesque** gives the brand a confident, slightly idiosyncratic voice at poster sizes;
-  **Geist** keeps the interface calm; **Geist Mono** makes every listing read like a precise ticket.
+- **Bricolage Grotesque**, set wide and medium-weight, gives the headlines a confident, slightly
+  idiosyncratic voice without poster heaviness; **Geist** carries everything people scan, including
+  every price in plain tabular figures; **Geist Mono** is reserved for the deal record's IDs and
+  field labels, so the receipt reads like a real document.
+- **The logo** keeps its Z-connecting-two-nodes idea, redrawn on one module (crisp from a 16px
+  favicon to a 180px app icon) with a calmer, de-condensed wordmark and proper light, dark and
+  violet-ground versions.
 - **Perforated "ticket" edges** on opportunities and buttons echo the noticeboard tear-off flyer —
   the physical ancestor of "post an opportunity" found in every bookshop, café and venue.
 

@@ -8,7 +8,9 @@
   <meta name="theme-color" content="#f3f0e8">
   <meta property="og:title" content="ZOMZEY — Post. Pitch. Paid.">
   <meta property="og:description" content="The opportunity-led marketplace connecting Pioneers, Influencers and Hubs.">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/bricolage-grotesque-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/tokens.css">
@@ -133,8 +135,7 @@
 <header class="site-header" data-header>
   <div class="site-header__inner">
     <a class="logo" href="#top" aria-label="ZOMZEY home">
-      <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="2" fill="currentColor"/><path d="M9.5 10.5h13l-13 11h13" fill="none" stroke="var(--logo-fg, #f3f0e8)" stroke-width="2.6" stroke-linejoin="round"/><circle cx="9.5" cy="10.5" r="2.6" fill="var(--violet)"/><circle cx="22.5" cy="21.5" r="2.6" fill="var(--violet)"/></svg>
-      <span class="logo__word">ZOMZEY</span>
+      <img class="logo__img" src="assets/img/logo/zomzey-logo-light.svg" alt="" width="123" height="32">
     </a>
 
     <nav class="nav" aria-label="Main">
@@ -179,12 +180,12 @@
     <p class="kicker hero__kicker">The opportunity-led marketplace</p>
 
     <h1 class="hero__title" id="hero-title">
-      <span class="hero__row" data-zone="post"><span class="hero__word">Post.</span> <span class="hero__note"><span class="g g--sq" aria-hidden="true"></span>Brands, authors &amp; founders post what they need. Free.</span></span>
-      <span class="hero__row" data-zone="pitch"><span class="hero__word">Pitch.</span> <span class="hero__note"><span class="g g--ci" aria-hidden="true"></span>Influencers, Hubs &amp; agencies send real offers.</span></span>
-      <span class="hero__row" data-zone="paid"><span class="hero__word">Paid.</span> <span class="hero__note"><svg class="seal seal--protected" aria-hidden="true"><use href="#seal-lock"/></svg>Protected Payments, powered by Stripe.</span></span>
+      <span class="hero__row" data-zone="post"><span class="hero__word">Post.</span> <span class="hero__note"><span class="g g--sq" aria-hidden="true"></span>Brands &amp; authors post what they need</span></span>
+      <span class="hero__row" data-zone="pitch"><span class="hero__word">Pitch.</span> <span class="hero__note"><span class="g g--ci" aria-hidden="true"></span>Creators, shops &amp; venues send offers</span></span>
+      <span class="hero__row" data-zone="paid"><span class="hero__word">Paid.</span> <span class="hero__note"><svg class="seal seal--protected" aria-hidden="true"><use href="#seal-lock"/></svg>Protected Payments, powered by Stripe</span></span>
     </h1>
 
-    <p class="hero__lede">ZOMZEY is where people with something to promote meet the creators, bookshops, venues, clubs and communities who can move it.</p>
+    <p class="hero__lede">The marketplace where people with something to promote meet the creators, shops, venues and communities who can move it.</p>
 
     <!-- Intent switch + sentence builder -->
     <div class="intent" data-intent-root>
@@ -206,7 +207,7 @@
         </p>
         <div class="intent__actions">
           <button class="btn btn--primary" type="submit"><span class="btn__label">Find people</span><span class="btn__stub"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
-          <a class="link" href="#how">or post an opportunity — free</a>
+          <a class="link" href="#join">or post an opportunity — free</a>
         </div>
       </form>
       </div>
@@ -229,7 +230,6 @@
     </div>
 
     <ul class="hero__trust" role="list">
-      <li><svg class="seal seal--verified" aria-hidden="true"><use href="#seal-check"/></svg>Free to join</li>
       <li><svg class="seal seal--verified" aria-hidden="true"><use href="#seal-check"/></svg>Pay only on a real deal</li>
       <li><svg class="seal seal--verified" aria-hidden="true"><use href="#seal-check"/></svg>Every brand verified</li>
     </ul>
@@ -238,11 +238,12 @@
   <!-- The living network (illustrative content) -->
   <div class="hero__net" data-net>
     <p class="sr-only">Illustration of the ZOMZEY network: an author’s opportunity receives offers from a BookTok creator and an independent bookshop; a band’s tour receives an offer from a Glasgow venue; the accepted £180 offer is held in Protected Payments until the work is approved.</p>
+    <p class="hero__railhead" aria-hidden="true"><span class="status status--live">Live on ZOMZEY</span><span class="hero__railhint">Swipe <svg class="icon"><use href="#i-arrow"/></svg></span></p>
     <div class="stage" aria-hidden="true" data-stage>
       <svg class="stage__lines" viewBox="0 0 820 800" preserveAspectRatio="none" data-stage-lines></svg>
 
       <!-- POST zone -->
-      <div class="node float float--a" style="--x:96;--y:70;--w:372" data-node="slipA" data-zone="post">
+      <div class="node" style="--x:64;--y:56;--w:412" data-node="slipA" data-zone="post">
         <article class="slip slip--ink">
           <header class="slip__head"><span class="tag"><span class="g g--sq"></span>Books</span><span class="status status--open">Open</span></header>
           <div class="slip__body">
@@ -253,100 +254,81 @@
               <dl class="slip__meta">
                 <div><dt>Wants</dt><dd>Book clubs&nbsp;· Bookshops&nbsp;· BookTok</dd></div>
                 <div><dt>Where</dt><dd>North West, UK</dd></div>
-                <div><dt>Budget</dt><dd class="slip__price">Up to £250</dd></div>
               </dl>
             </div>
           </div>
           <footer class="slip__stub">
-            <span class="slip__offers"><span class="roster"><span class="av av--hub" data-tint="sage">BS</span><span class="av av--person" data-tint="rose">MC</span><span class="av av--hub" data-tint="straw">CR</span><span class="av av--person" data-tint="mist">TM</span></span>4 offers</span>
-            <span class="slip__time">Posted 2h ago</span>
+            <span class="slip__offers"><span class="roster"><span class="av av--hub" data-tint="sage">BS</span><span class="av av--person" data-tint="rose">MC</span><span class="av av--hub" data-tint="straw">CR</span><span class="av av--person" data-tint="mist">TM</span></span>4 offers<span class="slip__time"> · 2h ago</span></span>
+            <span class="slip__price">Up to £250</span>
           </footer>
         </article>
       </div>
 
-      <div class="node float float--b" style="--x:500;--y:6;--w:272" data-node="slipB" data-zone="post">
+      <div class="node" style="--x:516;--y:0;--w:252" data-node="slipB" data-zone="post">
         <article class="slip">
           <header class="slip__head"><span class="tag"><span class="g g--sq"></span>Music</span><span class="status status--open">Open</span></header>
           <div class="slip__body">
             <div class="art"><svg viewBox="0 0 64 80"><use href="#art-ep"/></svg></div>
             <div>
               <h3 class="slip__title">Halloran Street</h3>
-              <p class="slip__sub">Debut EP tour · 6 dates</p>
-              <dl class="slip__meta"><div><dt>Wants</dt><dd>Venues&nbsp;· Cafés with a stage</dd></div></dl>
+              <p class="slip__sub">Debut EP tour&nbsp;· 6 dates</p>
             </div>
           </div>
-          <footer class="slip__stub"><span class="slip__offers">6 offers</span><span class="slip__price">£60–£300/date</span></footer>
+          <footer class="slip__stub"><span class="slip__offers">6 offers</span><span class="slip__price">£60–£300 / date</span></footer>
         </article>
       </div>
 
       <!-- PITCH zone -->
-      <div class="node" style="--x:0;--y:400;--w:262" data-node="maya" data-zone="pitch">
+      <div class="node" style="--x:24;--y:424;--w:264" data-node="maya" data-zone="pitch">
         <div class="member">
           <span class="av av--person" data-tint="rose">MC</span>
           <div>
             <p class="member__name">Maya Chen <svg class="seal seal--verified"><use href="#seal-check"/></svg></p>
             <p class="member__role">BookTok creator&nbsp;· Manchester</p>
-            <p class="member__stats"><span><b>8.2k</b> followers</span><span><b>6.1%</b> eng.</span></p>
           </div>
         </div>
       </div>
-      <div class="node" style="--x:22;--y:506;--w:250" data-node="offerMaya" data-zone="pitch">
-        <div class="offer"><span class="av av--person" data-tint="rose">MC</span><div><p class="offer__who">Offer to R. Okafor</p><p class="offer__what">Review video + 3 stories</p></div><span class="offer__price">£120</span></div>
+      <div class="node" style="--x:32;--y:514;--w:264" data-node="offerMaya" data-zone="pitch">
+        <div class="offer"><span class="av av--person" data-tint="rose">MC</span><p class="offer__what">Review video + 3 stories</p><span class="offer__price">£120</span></div>
       </div>
 
-      <div class="node" style="--x:300;--y:418;--w:272" data-node="brightshelf" data-zone="pitch">
+      <div class="node" style="--x:324;--y:440;--w:276" data-node="brightshelf" data-zone="pitch">
         <div class="member">
           <span class="av av--hub" data-tint="sage">BS</span>
           <div>
             <p class="member__name">BrightShelf Books <svg class="seal seal--verified"><use href="#seal-check"/></svg></p>
-            <p class="member__role">Independent bookshop&nbsp;· Manchester</p>
-            <p class="member__stats"><span><b>Hub</b></span><span>Events room · 60</span></p>
+            <p class="member__role">Indie bookshop&nbsp;· Manchester</p>
           </div>
         </div>
       </div>
-      <div class="node" style="--x:318;--y:526;--w:290" data-node="offerBS" data-zone="pitch">
-        <div class="offer offer--active"><span class="av av--hub" data-tint="sage">BS</span><div><p class="offer__who">Offer to R. Okafor</p><p class="offer__what">Front table, 4 weeks + author evening</p></div><span class="offer__price">£180</span></div>
+      <div class="node" style="--x:340;--y:530;--w:300" data-node="offerBS" data-zone="pitch">
+        <div class="offer offer--active"><span class="av av--hub" data-tint="sage">BS</span><p class="offer__what">Front table + author evening</p><span class="offer__price">£180</span></div>
       </div>
 
-      <div class="node float float--c" style="--x:560;--y:300;--w:212" data-node="lantern" data-zone="pitch">
+      <div class="node" style="--x:540;--y:300;--w:228" data-node="lantern" data-zone="pitch">
         <div class="member">
           <span class="av av--hub" data-tint="straw">LR</span>
           <div>
             <p class="member__name">The Lantern Rooms</p>
-            <p class="member__role">Live venue&nbsp;· Glasgow&nbsp;· 180 cap.</p>
+            <p class="member__role">Live venue&nbsp;· Glasgow</p>
           </div>
-        </div>
-      </div>
-
-      <div class="node" style="--x:584;--y:428;--w:188" data-node="agency" data-zone="pitch">
-        <div class="member member--agency">
-          <span class="roster"><span class="av av--person av--sm" data-tint="mist">JA</span><span class="av av--person av--sm" data-tint="clay">KO</span><span class="av av--person av--sm" data-tint="sand">+</span></span>
-          <div><p class="member__name">Northline Talent</p><p class="member__role">Agency&nbsp;· pitching a roster</p></div>
         </div>
       </div>
 
       <!-- PAID zone -->
-      <div class="node" style="--x:290;--y:640;--w:330" data-node="seal" data-zone="paid">
+      <div class="node" style="--x:316;--y:660;--w:304" data-node="seal" data-zone="paid">
         <div class="held">
           <svg class="held__seal"><use href="#seal-lock"/></svg>
           <div>
             <p class="held__amount"><span class="num">£180</span> held</p>
-            <p class="held__copy">Released to BrightShelf Books when the work is approved.</p>
+            <p class="held__copy">Released when the work is approved</p>
           </div>
-          <p class="held__by">Protected Payments · powered by Stripe</p>
-        </div>
-      </div>
-
-      <div class="node node--ticker" style="--x:0;--y:668;--w:250" data-zone="post">
-        <div class="ticker" data-ticker>
-          <span class="status status--live">Just posted</span>
-          <p class="ticker__item" data-ticker-item><b>Food &amp; drink</b> · Bristol — small-batch hot sauce wants cafés &amp; delis</p>
         </div>
       </div>
     </div>
 
-    <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false">
-      <svg class="icon" aria-hidden="true"><use href="#i-pause"/></svg><span>Pause motion</span>
+    <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false" title="Pause motion">
+      <svg class="icon" aria-hidden="true"><use href="#i-pause"/></svg><span class="sr-only">Pause motion</span>
     </button>
   </div>
 </section>
@@ -354,19 +336,18 @@
 <!-- ======================= 2 · FOLLOW ONE OPPORTUNITY (the deal record) ======================= -->
 <section class="record on-night" id="how" aria-labelledby="record-title">
   <div class="record__head">
-    <p class="kicker">How it works · Follow one opportunity</p>
-    <h2 class="d1" id="record-title">One brief.<br>Four offers.<br><span class="accent-night">One protected deal.</span></h2>
-    <p class="lead">A debut author needs readers in the North West. Here’s the whole deal, on the record — from the brief she posts to the bookshop getting paid.</p>
-    <p class="meta record__note">Illustrative example</p>
+    <p class="kicker">How it works</p>
+    <h2 class="d1" id="record-title">One brief. Four offers.<br><span class="accent-night">One protected deal.</span></h2>
+    <p class="lead">A debut author needs readers in the North West. Follow her deal from the brief she posts to the bookshop getting paid.</p>
   </div>
 
   <nav class="record__progress" aria-label="Deal stages" data-record-progress>
     <ol role="list">
-      <li><a href="#posted" data-step-link="posted"><span class="num">01</span> Posted</a></li>
-      <li><a href="#pitched" data-step-link="pitched"><span class="num">02</span> Pitched</a></li>
-      <li><a href="#agreed" data-step-link="agreed"><span class="num">03</span> Agreed</a></li>
-      <li><a href="#protected" data-step-link="protected"><span class="num">04</span> Protected</a></li>
-      <li><a href="#released" data-step-link="released"><span class="num">05</span> Released</a></li>
+      <li><a href="#posted" data-step-link="posted"><span class="num">01</span> <span class="lbl">Posted</span></a></li>
+      <li><a href="#pitched" data-step-link="pitched"><span class="num">02</span> <span class="lbl">Pitched</span></a></li>
+      <li><a href="#agreed" data-step-link="agreed"><span class="num">03</span> <span class="lbl">Agreed</span></a></li>
+      <li><a href="#protected" data-step-link="protected"><span class="num">04</span> <span class="lbl">Protected</span></a></li>
+      <li><a href="#released" data-step-link="released"><span class="num">05</span> <span class="lbl">Released</span></a></li>
     </ol>
   </nav>
 
@@ -374,25 +355,24 @@
     <!-- 01 POSTED -->
     <li class="rstep" id="posted" data-step="posted">
       <div class="rstep__note">
-        <p class="rstep__num num">01 — Posted</p>
+        <p class="rstep__num"><span class="num">01</span> Posted</p>
         <h3 class="d3">Post what you need. It’s free.</h3>
-        <p class="body">Say what you’re promoting, who it’s for and what you can spend. ZAi helps you draft the brief — you approve every word, nothing auto-publishes.</p>
-        <p class="rstep__tool"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>Stuck? The free Campaign Brief Generator turns a rough idea into a brief that attracts serious offers.</p>
+        <p class="body">Say what you’re promoting, who it’s for and what you can spend. ZAi helps you draft it — nothing goes live until you approve.</p>
       </div>
       <div class="rstep__paper">
         <div class="rec rec--top">
           <div class="rec__row rec__row--meta">
-            <span class="num">Opportunity · ZM-24817</span><span class="status status--open">Open</span>
+            <span class="num">Example · ZM-24817</span><span class="status status--open">Open</span>
           </div>
           <div class="rec__brief">
             <div class="art art--lg"><svg viewBox="0 0 64 80" aria-hidden="true"><use href="#art-book"/></svg></div>
             <div>
               <p class="tag"><span class="g g--sq" aria-hidden="true"></span>Books</p>
               <p class="rec__title">The Quiet Hours</p>
-              <p class="rec__by"><span class="av av--pioneer av--sm" data-tint="clay" aria-hidden="true">RO</span>R. Okafor · Author · Pioneer</p>
+              <p class="rec__by"><span class="av av--pioneer av--sm" data-tint="clay" aria-hidden="true">RO</span>R. Okafor · Author</p>
             </div>
           </div>
-          <p class="rec__text">“Debut crime novel set in Salford, out 7 November. I’m looking for book clubs, independent bookshops and BookTok readers in the North West who love a slow-burn mystery.”</p>
+          <p class="rec__text">“Debut crime novel set in Salford, out 7 November. Looking for book clubs, independent bookshops and BookTok readers in the North West who love a slow-burn mystery.”</p>
           <dl class="rec__facts">
             <div><dt>Wants</dt><dd>Book clubs&nbsp;· Bookshops&nbsp;· BookTok</dd></div>
             <div><dt>Where</dt><dd>North West, UK</dd></div>
@@ -407,37 +387,36 @@
     <!-- 02 PITCHED -->
     <li class="rstep" id="pitched" data-step="pitched">
       <div class="rstep__note">
-        <p class="rstep__num num">02 — Pitched</p>
+        <p class="rstep__num"><span class="num">02</span> Pitched</p>
         <h3 class="d3">The right people pitch to you.</h3>
-        <p class="body">Influencers, Hubs and agencies send priced offers. Smart filters sort them by niche, reach, engagement, price and location in seconds.</p>
-        <p class="rstep__tool"><svg class="icon" aria-hidden="true"><use href="#i-beacon"/></svg>ZBeacon finds the right people who aren’t on ZOMZEY yet — and brings them in with your offer attached.</p>
+        <p class="body">Influencers, Hubs and agencies send priced offers. ZBeacon also invites the right people who aren’t on ZOMZEY yet.</p>
       </div>
       <div class="rstep__paper">
         <div class="rec">
-          <div class="rec__row rec__row--meta"><span class="num">Offers · 4</span><span class="rec__sort"><svg class="icon" aria-hidden="true"><use href="#i-sliders"/></svg>niche · reach · engagement · price · location</span></div>
+          <div class="rec__row rec__row--meta"><span class="num">4 offers</span><span class="rec__sort"><svg class="icon" aria-hidden="true"><use href="#i-sliders"/></svg>Best match</span></div>
           <ul class="rec__offers" role="list" tabindex="0" aria-label="Offers received">
             <li class="roffer roffer--chosen">
               <span class="av av--hub" data-tint="sage" aria-hidden="true">BS</span>
-              <div><p class="roffer__name">BrightShelf Books <svg class="seal seal--verified" aria-label="Verified"><use href="#seal-check"/></svg></p><p class="roffer__what">Front table for 4 weeks + an author evening</p><p class="roffer__type"><span class="g g--ar" aria-hidden="true"></span>Hub · Independent bookshop · Manchester</p></div>
+              <div><p class="roffer__name">BrightShelf Books <svg class="seal seal--verified" aria-label="Verified"><use href="#seal-check"/></svg></p><p class="roffer__what">Front table for 4 weeks + author evening</p><p class="roffer__type"><span class="g g--ar" aria-hidden="true"></span>Hub · Manchester</p></div>
               <p class="roffer__price num">£180</p>
             </li>
             <li class="roffer">
               <span class="av av--person" data-tint="rose" aria-hidden="true">MC</span>
-              <div><p class="roffer__name">Maya Chen <svg class="seal seal--verified" aria-label="Verified"><use href="#seal-check"/></svg></p><p class="roffer__what">Review video + 3 stories</p><p class="roffer__type"><span class="g g--ci" aria-hidden="true"></span>Influencer · BookTok · 8.2k</p></div>
+              <div><p class="roffer__name">Maya Chen <svg class="seal seal--verified" aria-label="Verified"><use href="#seal-check"/></svg></p><p class="roffer__what">Review video + 3 stories</p><p class="roffer__type"><span class="g g--ci" aria-hidden="true"></span>Influencer · BookTok 8.2k</p></div>
               <p class="roffer__price num">£120</p>
             </li>
             <li class="roffer">
               <span class="av av--hub" data-tint="straw" aria-hidden="true">CR</span>
-              <div><p class="roffer__name">Crime Readers Club</p><p class="roffer__what">Book-of-the-month pick + discussion night</p><p class="roffer__type"><span class="g g--ar" aria-hidden="true"></span>Hub · Book club · Salford</p></div>
+              <div><p class="roffer__name">Crime Readers Club</p><p class="roffer__what">Book-of-the-month pick + discussion night</p><p class="roffer__type"><span class="g g--ar" aria-hidden="true"></span>Hub · Salford</p></div>
               <p class="roffer__price num">£90</p>
             </li>
             <li class="roffer">
               <span class="av av--person" data-tint="mist" aria-hidden="true">TM</span>
-              <div><p class="roffer__name">The Margin Podcast</p><p class="roffer__what">20-minute author interview</p><p class="roffer__type"><span class="g g--ci" aria-hidden="true"></span>Influencer · Podcast · books</p></div>
+              <div><p class="roffer__name">The Margin Podcast</p><p class="roffer__what">20-minute author interview</p><p class="roffer__type"><span class="g g--ci" aria-hidden="true"></span>Influencer · Podcast</p></div>
               <p class="roffer__price num">£75</p>
             </li>
           </ul>
-          <p class="rec__beacon"><svg class="icon" aria-hidden="true"><use href="#i-beacon"/></svg>ZBeacon invited 2 more readers’ groups who aren’t on ZOMZEY yet</p>
+          <p class="rec__beacon"><svg class="icon" aria-hidden="true"><use href="#i-beacon"/></svg>ZBeacon invited 2 more readers’ groups</p>
         </div>
       </div>
     </li>
@@ -445,22 +424,21 @@
     <!-- 03 AGREED -->
     <li class="rstep" id="agreed" data-step="agreed">
       <div class="rstep__note">
-        <p class="rstep__num num">03 — Agreed</p>
+        <p class="rstep__num"><span class="num">03</span> Agreed</p>
         <h3 class="d3">Agree the details in one place.</h3>
-        <p class="body">Compare offers and negotiate in a secure live chat. Deliverables, dates and price are fixed before anyone starts — and paid work is clearly labelled as an ad.</p>
+        <p class="body">Chat securely, then lock deliverables, date and fee before anyone starts. Paid work is always labelled as an ad.</p>
       </div>
       <div class="rstep__paper">
         <div class="rec">
-          <div class="rec__row rec__row--meta"><span class="num"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg> Secure chat · BrightShelf Books</span><span class="status status--agreed">Agreed</span></div>
+          <div class="rec__row rec__row--meta"><span class="num"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg> Secure chat</span><span class="status status--agreed">Agreed</span></div>
           <div class="chat">
             <p class="bubble bubble--me">Could the author evening be on a Thursday?</p>
             <p class="bubble bubble--them">Thursday 14th works. We’ll put it in our newsletter too.</p>
             <p class="bubble bubble--me">Perfect — accepting now.</p>
           </div>
           <dl class="rec__facts rec__facts--terms">
-            <div><dt>Deliverables</dt><dd>Front table, 4 weeks&nbsp;· Author evening</dd></div>
+            <div><dt>Deliverables</dt><dd>Front table, 4 weeks&nbsp;· Author evening <span class="tag tag--ad">#ad</span></dd></div>
             <div><dt>Date</dt><dd>Thu 14 Nov, 7pm</dd></div>
-            <div><dt>Label</dt><dd>Marked as #ad</dd></div>
             <div><dt>Fee</dt><dd class="num">£180</dd></div>
           </dl>
         </div>
@@ -470,13 +448,12 @@
     <!-- 04 PROTECTED -->
     <li class="rstep" id="protected" data-step="protected">
       <div class="rstep__note">
-        <p class="rstep__num num">04 — Protected</p>
+        <p class="rstep__num"><span class="num">04</span> Protected</p>
         <h3 class="d3">The money is held before work begins.</h3>
-        <p class="body">Protected Payments, powered by Stripe, holds the fee and only releases it when the work is approved. If something goes wrong, a fair and clear dispute process has your back.</p>
+        <p class="body">Protected Payments holds the fee and only releases it when the work is approved.</p>
         <ul class="trust-list" role="list">
-          <li><svg class="seal seal--verified" aria-hidden="true"><use href="#seal-check"/></svg><span><b>Every deal protected</b> Funds held until approval</span></li>
-          <li><svg class="seal seal--verified" aria-hidden="true"><use href="#seal-check"/></svg><span><b>Verified members</b> Every brand is verified; linked socials earn the badge</span></li>
-          <li><svg class="seal seal--verified" aria-hidden="true"><use href="#seal-check"/></svg><span><b>Disputes covered</b> A clear process if things go wrong</span></li>
+          <li><svg class="seal seal--verified" aria-hidden="true"><use href="#seal-check"/></svg>Verified members</li>
+          <li><svg class="seal seal--verified" aria-hidden="true"><use href="#seal-check"/></svg>Disputes covered</li>
         </ul>
       </div>
       <div class="rstep__paper">
@@ -506,14 +483,13 @@
     <!-- 05 RELEASED -->
     <li class="rstep" id="released" data-step="released">
       <div class="rstep__note">
-        <p class="rstep__num num">05 — Released</p>
+        <p class="rstep__num"><span class="num">05</span> Released</p>
         <h3 class="d3">Approved. Paid. On the record.</h3>
-        <p class="body">Approval releases the payment. Each completed deal adds to a verified track record, so the next opportunity comes easier.</p>
-        <p class="rstep__tool"><svg class="icon" aria-hidden="true"><use href="#i-calc"/></svg>Honest maths, no small print: the Keep Calculator shows exactly what lands in your pocket on any deal.</p>
+        <p class="body">Approval releases the payment, and the completed deal adds to both members’ verified track records.</p>
       </div>
       <div class="rstep__paper">
         <div class="rec rec--end">
-          <div class="rec__row rec__row--meta"><span class="num">Deal ZM-24817 · complete</span><span class="status status--released">Released</span></div>
+          <div class="rec__row rec__row--meta"><span class="num">ZM-24817 · complete</span><span class="status status--released">Released</span></div>
           <div class="stamp stamp--released" data-stamp>
             <svg class="stamp__seal" aria-hidden="true"><use href="#seal-check"/></svg>
             <p class="stamp__amount num">£180</p>
@@ -535,16 +511,16 @@
 <!-- ======================= 3 · THE NETWORK INDEX ======================= -->
 <section class="index" id="network" aria-labelledby="index-title" data-index>
   <div class="index__head">
-    <p class="kicker">Discover · Who’s here</p>
+    <p class="kicker">Who’s here</p>
     <h2 class="d1" id="index-title">That was one book.<br>The network is bigger.</h2>
-    <p class="lead">Pick who’s promoting and see who pitches. Three sides, one place — <span class="nowrap">Pioneers, Influencers and Hubs.</span></p>
+    <p class="lead">Pioneers post. Influencers pitch with an audience, Hubs with a place. <span class="nowrap">Pick a Pioneer to see who pitches.</span></p>
   </div>
 
   <div class="index__map">
     <svg class="index__lines" aria-hidden="true" data-index-lines></svg>
 
     <div class="index__col index__col--inf">
-      <h3 class="index__label"><span class="g g--ci" aria-hidden="true"></span>Influencers <span>pitch with an audience</span></h3>
+      <h3 class="index__label"><span class="g g--ci" aria-hidden="true"></span>Influencers</h3>
       <ul role="list" class="index__list" data-index-list="inf">
         <li data-key="tiktok">TikTok creators</li>
         <li data-key="youtube">YouTubers</li>
@@ -558,7 +534,7 @@
     </div>
 
     <div class="index__col index__col--pio">
-      <h3 class="index__label"><span class="g g--sq" aria-hidden="true"></span>Pioneers <span>post opportunities</span></h3>
+      <h3 class="index__label"><span class="g g--sq" aria-hidden="true"></span>Pioneers</h3>
       <ul role="list" class="index__list index__list--pio" data-index-list="pio">
         <li><button type="button" aria-pressed="true" data-pio="authors">Authors</button></li>
         <li><button type="button" aria-pressed="false" data-pio="music">Musicians &amp; bands</button></li>
@@ -573,7 +549,7 @@
     </div>
 
     <div class="index__col index__col--hub">
-      <h3 class="index__label"><span class="g g--ar" aria-hidden="true"></span>Hubs <span>pitch with a place</span></h3>
+      <h3 class="index__label"><span class="g g--ar" aria-hidden="true"></span>Hubs</h3>
       <ul role="list" class="index__list" data-index-list="hub">
         <li data-key="bookshops">Bookshops</li>
         <li data-key="bookclubs">Book clubs</li>
@@ -587,9 +563,9 @@
         <li data-key="trade">Trade shows</li>
       </ul>
     </div>
-  </div>
 
-  <p class="index__summary" aria-live="polite" data-index-summary><b>Authors</b> are usually pitched by BookTok creators, podcasters, newsletter writers, bookshops, book clubs and libraries.</p>
+    <p class="index__summary" aria-live="polite" data-index-summary><b>Authors</b> are usually pitched by BookTok creators, podcasters, newsletter writers, bookshops, book clubs and libraries.</p>
+  </div>
 
   <div class="index__agency">
     <span class="roster" aria-hidden="true"><span class="av av--person" data-tint="mist">JA</span><span class="av av--person" data-tint="clay">KO</span><span class="av av--person" data-tint="rose">LT</span></span>
@@ -603,9 +579,9 @@
   <div class="board__head">
     <div>
       <p class="kicker"><span class="status status--live">Live board</span></p>
-      <h2 class="d2" id="board-title">Opportunities, just posted.</h2>
+      <h2 class="d1" id="board-title">Opportunities, just posted.</h2>
     </div>
-    <p class="board__intro body">Pioneers post, members pitch to win. Full briefs, budgets and offer counts are visible before you sign up — rates and contacts unlock with a free account.</p>
+    <p class="board__intro lead">See every brief, budget and offer count before you sign up. Pitching is free.</p>
   </div>
 
   <div class="board__filters" role="group" aria-label="Filter opportunities by category" data-filters>
@@ -622,134 +598,133 @@
   </div>
   <p class="sr-only" aria-live="polite" data-board-count></p>
 
-  <ul class="board__grid" role="list" data-board-grid>
+  <ul class="board__grid" role="list" data-board-grid data-showing="all">
     <li class="board__item board__item--feature" data-cat="music">
-      <article class="slip slip--ink slip--feature">
-        <header class="slip__head"><span class="tag"><span class="g g--sq" aria-hidden="true"></span>Music</span><span class="slip__time">5h ago</span></header>
+      <article class="slip slip--ink slip--feature" data-wants="Venues · Cafés with a stage · TikTok creators">
+        <header class="slip__head"><span class="tag"><span class="g g--sq" aria-hidden="true"></span>Music</span><span class="status status--open">Open</span></header>
         <div class="slip__body">
           <div class="art art--xl"><svg viewBox="0 0 64 80" aria-hidden="true"><use href="#art-ep"/></svg></div>
           <div>
-            <h3 class="slip__title"><button class="slip__open" type="button" data-open-brief>Halloran Street — debut EP tour</button></h3>
-            <p class="slip__sub">Four-piece indie band from Leeds touring a debut EP across six UK cities in spring.</p>
+            <h3 class="slip__title"><button class="slip__open" type="button" data-open-brief>Halloran Street&nbsp;— debut EP&nbsp;tour</button></h3>
+            <p class="slip__sub">Four-piece indie band from Leeds touring a debut EP across six UK cities this spring.</p>
             <dl class="slip__meta">
               <div><dt>Wants</dt><dd>Venues&nbsp;· Cafés with a stage&nbsp;· TikTok creators</dd></div>
               <div><dt>Where</dt><dd>Leeds → 6 UK cities</dd></div>
-              <div><dt>Budget</dt><dd class="slip__price">£60–£300 / date</dd></div>
             </dl>
-            <p class="slip__by"><span class="av av--pioneer" data-tint="violet" aria-hidden="true">HS</span>Halloran Street · Band · Pioneer</p>
+            <p class="slip__by"><span class="av av--pioneer" data-tint="violet" aria-hidden="true">HS</span>Halloran Street · Band</p>
           </div>
         </div>
-        <footer class="slip__stub"><span class="slip__offers"><span class="roster" aria-hidden="true"><span class="av av--hub" data-tint="straw">LR</span><span class="av av--hub" data-tint="sage">TC</span><span class="av av--person" data-tint="rose">DJ</span></span>6 offers</span><span class="status status--open">Open</span></footer>
+        <footer class="slip__stub"><span class="slip__offers"><span class="roster" aria-hidden="true"><span class="av av--hub" data-tint="straw">LR</span><span class="av av--hub" data-tint="sage">TC</span><span class="av av--person" data-tint="rose">DJ</span></span>6 offers<span class="slip__time"> · 5h ago</span></span><span class="slip__price">£60–£300 / date</span></footer>
       </article>
     </li>
     <li class="board__item" data-cat="books">
-      <article class="slip">
-        <header class="slip__head"><span class="tag"><span class="g g--sq" aria-hidden="true"></span>Books</span><span class="slip__time">2h ago</span></header>
+      <article class="slip" data-wants="Book clubs · Bookshops · BookTok">
+        <header class="slip__head"><span class="tag"><span class="g g--sq" aria-hidden="true"></span>Books</span><span class="status status--new">New</span></header>
         <div class="slip__body">
           <div class="art"><svg viewBox="0 0 64 80" aria-hidden="true"><use href="#art-book"/></svg></div>
           <div>
             <h3 class="slip__title"><button class="slip__open" type="button" data-open-brief>The Quiet Hours</button></h3>
-            <dl class="slip__meta"><div><dt>Wants</dt><dd>Book clubs&nbsp;· Bookshops&nbsp;· BookTok</dd></div><div><dt>Where</dt><dd>North West, UK</dd></div></dl>
+            <p class="slip__loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span class="sr-only">Where: </span>North West, UK</p>
           </div>
         </div>
-        <footer class="slip__stub"><span class="slip__offers">4 offers</span><span class="slip__price">Up to £250</span></footer>
+        <footer class="slip__stub"><span class="slip__offers">4 offers<span class="slip__time"> · 2h ago</span></span><span class="slip__price">Up to £250</span></footer>
       </article>
     </li>
     <li class="board__item" data-cat="beauty">
-      <article class="slip">
-        <header class="slip__head"><span class="tag"><span class="g g--sq" aria-hidden="true"></span>Beauty</span><span class="slip__time">3h ago</span></header>
+      <article class="slip" data-wants="UGC creators, 5k–50k">
+        <header class="slip__head"><span class="tag"><span class="g g--sq" aria-hidden="true"></span>Beauty</span><span class="status status--new">New</span></header>
         <div class="slip__body">
           <div class="art"><svg viewBox="0 0 64 80" aria-hidden="true"><use href="#art-spf"/></svg></div>
           <div>
             <h3 class="slip__title"><button class="slip__open" type="button" data-open-brief>Fragrance-free SPF 50 launch</button></h3>
-            <dl class="slip__meta"><div><dt>Wants</dt><dd>UGC creators, 5k–50k</dd></div><div><dt>Where</dt><dd>Online&nbsp;· UK</dd></div></dl>
+            <p class="slip__loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span class="sr-only">Where: </span>Online · UK</p>
           </div>
         </div>
-        <footer class="slip__stub"><span class="slip__offers">11 offers</span><span class="slip__price">£80–£200</span></footer>
+        <footer class="slip__stub"><span class="slip__offers">11 offers<span class="slip__time"> · 3h ago</span></span><span class="slip__price">£80–£200</span></footer>
       </article>
     </li>
     <li class="board__item" data-cat="food">
-      <article class="slip">
-        <header class="slip__head"><span class="tag"><span class="g g--sq" aria-hidden="true"></span>Food &amp; drink</span><span class="slip__time">1d ago</span></header>
+      <article class="slip" data-wants="Cafés · Delis · Food creators">
+        <header class="slip__head"><span class="tag"><span class="g g--sq" aria-hidden="true"></span>Food &amp; drink</span><span class="status status--open">Open</span></header>
         <div class="slip__body">
           <div class="art"><svg viewBox="0 0 64 80" aria-hidden="true"><use href="#art-sauce"/></svg></div>
           <div>
             <h3 class="slip__title"><button class="slip__open" type="button" data-open-brief>Small-batch hot sauce</button></h3>
-            <dl class="slip__meta"><div><dt>Wants</dt><dd>Cafés&nbsp;· Delis&nbsp;· Food creators</dd></div><div><dt>Where</dt><dd>Bristol</dd></div></dl>
+            <p class="slip__loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span class="sr-only">Where: </span>Bristol</p>
           </div>
         </div>
-        <footer class="slip__stub"><span class="slip__offers">3 offers</span><span class="slip__price">£150 + product</span></footer>
+        <footer class="slip__stub"><span class="slip__offers">3 offers<span class="slip__time"> · 1d ago</span></span><span class="slip__price">£150 + product</span></footer>
       </article>
     </li>
     <li class="board__item" data-cat="apps">
-      <article class="slip">
-        <header class="slip__head"><span class="tag"><span class="g g--sq" aria-hidden="true"></span>Apps</span><span class="slip__time">1d ago</span></header>
+      <article class="slip" data-wants="Finance YouTubers · Newsletters">
+        <header class="slip__head"><span class="tag"><span class="g g--sq" aria-hidden="true"></span>Apps</span><span class="status status--open">Open</span></header>
         <div class="slip__body">
           <div class="art"><svg viewBox="0 0 64 80" aria-hidden="true"><use href="#art-app"/></svg></div>
           <div>
             <h3 class="slip__title"><button class="slip__open" type="button" data-open-brief>Tally — budgeting for students</button></h3>
-            <dl class="slip__meta"><div><dt>Wants</dt><dd>Finance YouTubers&nbsp;· Newsletters</dd></div><div><dt>Where</dt><dd>Online</dd></div></dl>
+            <p class="slip__loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span class="sr-only">Where: </span>Online</p>
           </div>
         </div>
-        <footer class="slip__stub"><span class="slip__offers">7 offers</span><span class="slip__price">$300</span></footer>
+        <footer class="slip__stub"><span class="slip__offers">7 offers<span class="slip__time"> · 1d ago</span></span><span class="slip__price">$300</span></footer>
       </article>
     </li>
     <li class="board__item" data-cat="events">
-      <article class="slip">
-        <header class="slip__head"><span class="tag"><span class="g g--sq" aria-hidden="true"></span>Events</span><span class="slip__time">6h ago</span></header>
+      <article class="slip" data-wants="Local creators · Student groups">
+        <header class="slip__head"><span class="tag"><span class="g g--sq" aria-hidden="true"></span>Events</span><span class="status status--open">Open</span></header>
         <div class="slip__body">
           <div class="art"><svg viewBox="0 0 64 80" aria-hidden="true"><use href="#art-ticket"/></svg></div>
           <div>
-            <h3 class="slip__title"><button class="slip__open" type="button" data-open-brief>Thursday open-mic nights</button></h3>
-            <dl class="slip__meta"><div><dt>Wants</dt><dd>Local creators&nbsp;· Student groups</dd></div><div><dt>Where</dt><dd>Glasgow</dd></div></dl>
+            <h3 class="slip__title"><button class="slip__open" type="button" data-open-brief>Thursday open&#8209;mic nights</button></h3>
+            <p class="slip__loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span class="sr-only">Where: </span>Glasgow</p>
           </div>
         </div>
-        <footer class="slip__stub"><span class="slip__offers">2 offers</span><span class="slip__price">£100 / month</span></footer>
+        <footer class="slip__stub"><span class="slip__offers">2 offers<span class="slip__time"> · 6h ago</span></span><span class="slip__price">£100 / month</span></footer>
       </article>
     </li>
     <li class="board__item" data-cat="travel">
-      <article class="slip">
-        <header class="slip__head"><span class="tag"><span class="g g--sq" aria-hidden="true"></span>Travel</span><span class="slip__time">2d ago</span></header>
+      <article class="slip" data-wants="Hiking clubs · Outdoor YouTubers">
+        <header class="slip__head"><span class="tag"><span class="g g--sq" aria-hidden="true"></span>Travel</span><span class="status status--closing">Closing soon</span></header>
         <div class="slip__body">
           <div class="art"><svg viewBox="0 0 64 80" aria-hidden="true"><use href="#art-shell"/></svg></div>
           <div>
             <h3 class="slip__title"><button class="slip__open" type="button" data-open-brief>Packable rain shell</button></h3>
-            <dl class="slip__meta"><div><dt>Wants</dt><dd>Hiking clubs&nbsp;· Outdoor YouTubers</dd></div><div><dt>Where</dt><dd>UK &amp; EU</dd></div></dl>
+            <p class="slip__loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span class="sr-only">Where: </span>UK &amp; EU</p>
           </div>
         </div>
-        <footer class="slip__stub"><span class="slip__offers">5 offers</span><span class="slip__price">£120 + product</span></footer>
+        <footer class="slip__stub"><span class="slip__offers">5 offers<span class="slip__time"> · 2d ago</span></span><span class="slip__price">£120 + product</span></footer>
       </article>
     </li>
     <li class="board__item" data-cat="kids">
-      <article class="slip">
-        <header class="slip__head"><span class="tag"><span class="g g--sq" aria-hidden="true"></span>Kids</span><span class="slip__time">1d ago</span></header>
+      <article class="slip" data-wants="Parenting creators · Library storytimes">
+        <header class="slip__head"><span class="tag"><span class="g g--sq" aria-hidden="true"></span>Kids</span><span class="status status--open">Open</span></header>
         <div class="slip__body">
           <div class="art"><svg viewBox="0 0 64 80" aria-hidden="true"><use href="#art-toys"/></svg></div>
           <div>
             <h3 class="slip__title"><button class="slip__open" type="button" data-open-brief>Wooden stacking toys</button></h3>
-            <dl class="slip__meta"><div><dt>Wants</dt><dd>Parenting creators&nbsp;· Library storytimes</dd></div><div><dt>Where</dt><dd>UK</dd></div></dl>
+            <p class="slip__loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span class="sr-only">Where: </span>UK</p>
           </div>
         </div>
-        <footer class="slip__stub"><span class="slip__offers">3 offers</span><span class="slip__price">£90</span></footer>
+        <footer class="slip__stub"><span class="slip__offers">3 offers<span class="slip__time"> · 1d ago</span></span><span class="slip__price">£90</span></footer>
       </article>
     </li>
     <li class="board__item" data-cat="courses">
-      <article class="slip">
-        <header class="slip__head"><span class="tag"><span class="g g--sq" aria-hidden="true"></span>Courses</span><span class="slip__time">4h ago</span></header>
+      <article class="slip" data-wants="Craft communities · YouTubers">
+        <header class="slip__head"><span class="tag"><span class="g g--sq" aria-hidden="true"></span>Courses</span><span class="status status--open">Open</span></header>
         <div class="slip__body">
           <div class="art"><svg viewBox="0 0 64 80" aria-hidden="true"><use href="#art-palette"/></svg></div>
           <div>
             <h3 class="slip__title"><button class="slip__open" type="button" data-open-brief>Watercolour for beginners</button></h3>
-            <dl class="slip__meta"><div><dt>Wants</dt><dd>Craft communities&nbsp;· YouTubers</dd></div><div><dt>Where</dt><dd>Online</dd></div></dl>
+            <p class="slip__loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span class="sr-only">Where: </span>Online</p>
           </div>
         </div>
-        <footer class="slip__stub"><span class="slip__offers">4 offers</span><span class="slip__price">$200</span></footer>
+        <footer class="slip__stub"><span class="slip__offers">4 offers<span class="slip__time"> · 4h ago</span></span><span class="slip__price">$200</span></footer>
       </article>
     </li>
   </ul>
 
   <div class="board__foot">
-    <p class="meta">Illustrative listings based on ZOMZEY categories · Prices in £ and $</p>
+    <p class="board__note">Example listings · prices in £ and $</p>
     <a class="btn btn--ghost" href="#join"><span class="btn__label">Browse all opportunities</span><span class="btn__stub"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
   </div>
 </section>
@@ -767,67 +742,52 @@
 
   <div class="doors__pair">
     <article class="door door--need" id="door-need" aria-labelledby="door-need-title" data-door="need">
-      <p class="door__who"><span class="g g--sq" aria-hidden="true"></span>For Pioneers — brands, authors, founders, small businesses</p>
+      <p class="door__who"><span class="g g--sq" aria-hidden="true"></span>For Pioneers</p>
       <h3 class="d2" id="door-need-title">I have something to promote.</h3>
       <ol class="door__steps" role="list">
-        <li><span class="num">1</span><p><b>Post an opportunity in minutes.</b> It’s free — say what you need, who it’s for and your budget.</p></li>
-        <li><span class="num">2</span><p><b>Offers come to you.</b> From creators, shops, venues, clubs, communities and agencies.</p></li>
-        <li><span class="num">3</span><p><b>Pay only on a real deal.</b> Your money is held safely and released when you approve the work.</p></li>
+        <li><span class="num">1</span><p><b>Post what you need.</b> Free, in minutes.</p></li>
+        <li><span class="num">2</span><p><b>Offers come to you.</b> From creators, venues and shops.</p></li>
+        <li><span class="num">3</span><p><b>Pay only on a real deal.</b> Held until you approve.</p></li>
       </ol>
       <form class="starter" id="starter-form" action="#join" data-starter>
-        <div class="starter__head"><span class="num">New opportunity</span><span class="status status--draft" data-starter-status>Draft</span></div>
-        <div class="field">
-          <label class="field__label" for="starter-what">What are you promoting?</label>
+        <div class="starter__top">
+          <label class="starter__label" for="starter-what">What are you promoting?</label>
+          <span class="status status--draft" data-starter-status>Draft</span>
+        </div>
+        <div class="starter__bar">
+          <svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>
           <input class="input" id="starter-what" name="what" autocomplete="off" placeholder="A debut novel, a hot sauce, a 6-date tour…" data-starter-what>
         </div>
-        <fieldset class="starter__who">
-          <legend class="field__label">Who should pitch?</legend>
-          <label class="toggle"><input type="checkbox" name="who" value="influencers" checked><span><span class="g g--ci" aria-hidden="true"></span>Influencers</span></label>
-          <label class="toggle"><input type="checkbox" name="who" value="hubs" checked><span><span class="g g--ar" aria-hidden="true"></span>Hubs</span></label>
-          <label class="toggle"><input type="checkbox" name="who" value="agencies"><span><span class="g g--ro" aria-hidden="true"></span>Agencies</span></label>
-        </fieldset>
-        <div class="field">
-          <label class="field__label" for="starter-budget">Budget</label>
-          <select class="select" id="starter-budget" name="budget">
-            <option>Under £100</option><option selected>£100–£250</option><option>£250–£1,000</option><option>£1,000+</option><option>Not sure yet</option>
-          </select>
-        </div>
-        <p class="starter__zai"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg><span>ZAi helps you finish the brief — you approve every word. Or try the <a class="link" href="#join">Campaign Brief Generator</a>.</span></p>
       </form>
-      <button class="btn btn--primary door__cta" type="submit" form="starter-form"><span class="btn__label">Post an opportunity — free</span><span class="btn__stub"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+      <div class="door__actions">
+        <button class="btn btn--primary" type="submit" form="starter-form"><span class="btn__label">Post an opportunity — free</span><span class="btn__stub"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+        <a class="link link--arrow" href="#join">Campaign Brief Generator <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
     </article>
 
     <article class="door door--earn" id="door-earn" aria-labelledby="door-earn-title" data-door="earn">
-      <p class="door__who"><span class="g g--ci" aria-hidden="true"></span><span class="g g--ar" aria-hidden="true"></span>For Influencers, Hubs &amp; agencies</p>
+      <p class="door__who"><span class="g g--ci" aria-hidden="true"></span><span class="g g--ar" aria-hidden="true"></span>For Influencers &amp; Hubs</p>
       <h3 class="d2" id="door-earn-title">I have an audience, a space or a skill.</h3>
       <ol class="door__steps" role="list">
-        <li><span class="num">1</span><p><b>Show what you offer.</b> Your best photo, video and packages, so buyers see exactly what they get.</p></li>
-        <li><span class="num">2</span><p><b>Pitch for what fits.</b> Browse real opportunities and set your own rate.</p></li>
-        <li><span class="num">3</span><p><b>Get paid safely.</b> Protected Payments holds the fee before you start.</p></li>
+        <li><span class="num">1</span><p><b>Show what you offer.</b> Photos, video, packages.</p></li>
+        <li><span class="num">2</span><p><b>Pitch for what fits.</b> At your own rate.</p></li>
+        <li><span class="num">3</span><p><b>Get paid safely.</b> The fee is held before you start.</p></li>
       </ol>
-
       <div class="calc" data-calc>
         <div class="calc__top">
           <label class="calc__label" for="followers">What’s a feed post worth?</label>
           <output class="calc__out" for="followers" data-calc-out><span class="num">≈ £70</span></output>
         </div>
-        <input class="range" type="range" id="followers" min="0" max="100" step="1" value="35" aria-describedby="calc-help" data-calc-range>
-        <div class="calc__scale"><span data-calc-followers class="num">7,000 followers</span><span data-calc-tier>Nano · 1k–10k</span></div>
-        <p class="calc__help" id="calc-help">A rough starting point from ZOMZEY’s pricing guide: about £10 per 1,000 followers for a feed post. Engagement, niche and usage rights move it — you always set your own rate.</p>
+        <input class="range" type="range" id="followers" min="0" max="100" step="1" value="28" data-calc-range>
+        <div class="calc__scale"><span data-calc-followers class="num">6,900 followers</span><span data-calc-tier>Nano · 1k–10k</span></div>
       </div>
-
-      <div class="door__links">
-        <a class="link link--arrow" href="#join">Hub Earnings Estimator <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        <a class="link link--arrow" href="#join">Keep Calculator <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <div class="door__actions">
+        <a class="btn btn--accent" href="#join"><span class="btn__label">Create your profile — free</span><span class="btn__stub"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="link link--arrow" href="#opportunities">Browse opportunities <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
-      <a class="btn btn--accent door__cta" href="#opportunities"><span class="btn__label">Browse opportunities</span><span class="btn__stub"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
     </article>
   </div>
-
-  <div class="doors__extra">
-    <p><b>Running a roster?</b> Agencies pitch for every client from one dashboard. <a class="link" href="#join">ZOMZEY for agencies</a></p>
-    <p><b>Know people who should be here?</b> Become an affiliate the moment you join and earn every time you refer someone in. <a class="link" href="#join">How affiliates earn</a></p>
-  </div>
+  <p class="doors__fine">Price guide: about £10 per 1,000 followers for a feed post, from ZOMZEY’s pricing calculator. You always set your own rate.</p>
 </section>
 
 <!-- ======================= 6 · FINALE ======================= -->
@@ -850,7 +810,7 @@
   <div class="finale__inner">
     <h2 class="finale__title" id="finale-title">Your next opportunity is already out there.</h2>
     <div class="finale__side">
-      <p class="finale__copy">Join, build your profile, browse and pitch for nothing. You only pay on a real deal.</p>
+      <p class="finale__copy">Free to join, browse and pitch. You only pay on a real deal.</p>
       <div class="finale__ctas">
         <a class="btn btn--paper" href="#join"><span class="btn__label">Join ZOMZEY — free</span><span class="btn__stub"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
         <a class="link link--arrow finale__link" href="#opportunities">Browse opportunities <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
@@ -865,10 +825,9 @@
   <div class="site-footer__top">
     <div class="site-footer__brand">
       <a class="logo logo--night" href="#top" aria-label="ZOMZEY home">
-        <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="2" fill="currentColor"/><path d="M9.5 10.5h13l-13 11h13" fill="none" stroke="var(--logo-fg, #16140f)" stroke-width="2.6" stroke-linejoin="round"/><circle cx="9.5" cy="10.5" r="2.6" fill="var(--violet)"/><circle cx="22.5" cy="21.5" r="2.6" fill="var(--violet)"/></svg>
-        <span class="logo__word">ZOMZEY</span>
+        <img class="logo__img" src="assets/img/logo/zomzey-logo-dark.svg" alt="" width="123" height="32">
       </a>
-      <p class="site-footer__tag">The platform where everybody wins. Pioneers post, members pitch to win, every deal protected.</p>
+      <p class="site-footer__tag">The opportunity-led marketplace. Pioneers post, members pitch, every deal protected.</p>
     </div>
     <nav class="site-footer__cols" aria-label="Footer">
       <details class="fcol" open><summary>Platform</summary><ul role="list"><li><a href="#network">Discover</a></li><li><a href="#opportunities">Opportunities</a></li><li><a href="#how">How it works</a></li><li><a href="#protected">Protected Payments</a></li><li><a href="#join">Affiliates</a></li></ul></details>
@@ -893,7 +852,7 @@
 <!-- ======================= Mobile menu sheet ======================= -->
 <dialog class="sheet sheet--menu" id="menu-sheet" aria-label="Menu" data-menu>
   <div class="sheet__bar">
-    <span class="logo__word">ZOMZEY</span>
+    <img class="logo__img" src="assets/img/logo/zomzey-logo-light.svg" alt="ZOMZEY" width="123" height="32">
     <button class="sheet__close" type="button" aria-label="Close menu" data-close><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
   </div>
   <nav aria-label="Mobile">

@@ -73,10 +73,12 @@ that extends beyond the homepage (profile pages, dashboards, emails, social).
 - **One accent:** Signal Violet `#4A2BEA` — actions, connections, *the network*.
 - **One signal:** Release Green `#0A7049` — only for money that is protected, released or
   verified safe.
-- **Type:** *Bricolage Grotesque* (variable: weight, width, optical size) for display —
-  characterful ink-traps at poster sizes, calm at small sizes. *Geist* for interface,
-  *Geist Mono* for metadata (prices, locations, timestamps, statuses) so listings read like
-  precise tickets.
+- **Type (v1.1 polish):** three voices, one job each.
+  *Bricolage Grotesque* — headlines only, de-condensed (98–100% width) and lighter: the hero at
+  580, every section heading at one shared size and weight (550), so the hero is the single peak.
+  *Geist* — everything people scan: body, card and listing titles, labels, buttons, and **all
+  money** in tabular figures (a plain £ reads as more trustworthy than a display swash).
+  *Geist Mono* — only the deal record's document data (IDs, receipt field labels).
 - **Motion:** only where it explains — offers travel along connection lines, the sticky deal
   card changes state, index lines draw between matched sides. Everything is static and
   complete under `prefers-reduced-motion`.

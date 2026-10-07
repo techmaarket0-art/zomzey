@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=2400">
   <title>ZOMZEY — Presentation board</title>
+  <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
@@ -14,13 +15,12 @@
     .top { align-items: start; }
     .intro { grid-column: 1 / span 4; padding-top: 12px; }
     .intro .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); margin-bottom: 64px; }
-    .intro .logo svg { width: 40px; height: 40px; }
-    .intro .logo span { font-family: var(--font-display); font-weight: 750; font-stretch: 82%; font-size: 2rem; letter-spacing: -0.03em; }
-    .intro h1 { font-family: var(--font-display); font-weight: 700; font-stretch: 80%; font-size: 168px; line-height: 0.84; letter-spacing: -0.045em; margin: 22px 0 28px; }
-    .intro h2 { font-family: var(--font-display); font-weight: 600; font-stretch: 86%; font-size: 40px; letter-spacing: -0.025em; line-height: 1; color: var(--violet); }
+    .intro .logo img { height: 44px; width: auto; display: block; }
+    .intro h1 { font-family: var(--font-display); font-weight: 580; font-stretch: 98%; font-size: 150px; line-height: 0.92; letter-spacing: -0.03em; margin: 22px 0 28px; }
+    .intro h2 { font-family: var(--font-display); font-weight: 550; font-stretch: 100%; font-size: 40px; letter-spacing: -0.025em; line-height: 1.05; color: var(--violet); }
     .intro p.lede { margin-top: 28px; font-size: 22px; line-height: 1.5; color: var(--ink-2); max-width: 30ch; }
     .grammar { margin-top: 44px; display: grid; gap: 14px; }
-    .grammar p { display: flex; align-items: center; gap: 16px; font-family: var(--font-display); font-weight: 600; font-stretch: 88%; font-size: 26px; letter-spacing: -0.02em; }
+    .grammar p { display: flex; align-items: center; gap: 16px; font-family: var(--font-display); font-weight: 520; font-stretch: 100%; font-size: 26px; letter-spacing: -0.018em; }
     .grammar .g { font-size: 22px; }
     .grammar .seal { width: 24px; height: 24px; }
     .browser { grid-column: 5 / -1; border: 1px solid var(--ink); border-radius: 6px; overflow: hidden; background: var(--card); box-shadow: 0 60px 90px -50px rgb(22 20 15 / .45); }
@@ -36,20 +36,26 @@
     .phone { border: 9px solid #2c2821; border-radius: 46px; overflow: hidden; background: #000; box-shadow: 0 50px 80px -40px rgb(0 0 0 / .8); }
     .phone img { width: 100%; display: block; }
     .night-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 56px; }
-    .night-head h3 { font-family: var(--font-display); font-weight: 680; font-stretch: 82%; font-size: 84px; letter-spacing: -0.04em; line-height: .9; }
+    .night-head h3 { font-family: var(--font-display); font-weight: 550; font-stretch: 100%; font-size: 72px; letter-spacing: -0.03em; line-height: 1; }
     .night-head p { max-width: 46ch; font-size: 20px; color: var(--on-night-2); line-height: 1.5; }
 
     .sections { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-top: 0; }
     .frame { border: 1px solid var(--ink); border-radius: 4px; overflow: hidden; height: 900px; background: var(--paper); }
     .frame img { width: 100%; height: auto; display: block; }
-    .sys { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 40px; margin-top: 72px; align-items: stretch; }
+    .sys { display: grid; grid-template-columns: 1fr 0.9fr 1fr 1.1fr; gap: 32px; margin-top: 72px; align-items: stretch; }
+    .logo-panel { display: grid; gap: 14px; align-content: start; }
+    .logo-panel .row { display: flex; align-items: center; gap: 16px; padding: 18px; border-radius: 2px; }
+    .logo-panel .row img { height: 40px; width: auto; display: block; }
+    .logo-panel .row--night { background: var(--night); }
+    .logo-panel .row--violet { background: var(--violet); }
+    .logo-panel .fav { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--ink-3); }
     .sys > div { border: 1px solid var(--line); background: var(--card); border-radius: 4px; padding: 32px; }
     .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 18px; }
     .swatches div { height: 120px; border-radius: 2px; display: flex; align-items: end; padding: 10px; font-family: var(--font-mono); font-size: 13px; border: 1px solid var(--line); }
-    .type-big { font-family: var(--font-display); font-weight: 700; font-stretch: 80%; font-size: 120px; line-height: .85; letter-spacing: -0.045em; margin-top: 14px; }
+    .type-big { font-family: var(--font-display); font-weight: 580; font-stretch: 98%; font-size: 112px; line-height: .92; letter-spacing: -0.03em; margin-top: 14px; }
     .type-row { display: flex; gap: 28px; margin-top: 18px; align-items: baseline; }
     .type-row span:first-child { font-size: 34px; font-weight: 500; letter-spacing: -.02em; }
-    .type-row span:last-child { font-family: var(--font-mono); font-size: 30px; }
+    .type-row span:last-child { font-family: var(--font-ui); font-weight: 650; font-variant-numeric: tabular-nums; font-size: 30px; }
     .parts { display: grid; gap: 14px; margin-top: 18px; font-size: 16px; }
     .parts .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
     .foot { display: flex; justify-content: space-between; margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--ink); font-family: var(--font-mono); font-size: 14px; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-3); }
@@ -168,7 +174,7 @@
 <section class="bd">
   <div class="bd-grid top">
     <div class="intro">
-      <a class="logo" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="2" fill="#16140f"/><path d="M9.5 10.5h13l-13 11h13" fill="none" stroke="#f3f0e8" stroke-width="2.6" stroke-linejoin="round"/><circle cx="9.5" cy="10.5" r="2.6" fill="#4a2bea"/><circle cx="22.5" cy="21.5" r="2.6" fill="#4a2bea"/></svg><span>ZOMZEY</span></a>
+      <a class="logo" href="index.html"><img src="assets/img/logo/zomzey-logo-light.svg" alt="ZOMZEY" width="169" height="44"></a>
       <p class="kicker">Homepage redesign · concept</p>
       <h1>Post.<br>Pitch.<br>Paid.</h1>
       <h2>The Opportunity Network</h2>
@@ -224,6 +230,13 @@
       <p class="type-big">Pitch.</p>
       <div class="type-row"><span>Interface 16/1.55</span><span>£180 · 2h</span></div>
     </div>
+    <div class="logo-panel">
+      <p class="meta">Refined logo · light / dark / violet</p>
+      <div class="row"><img src="assets/img/logo/zomzey-logo-light.svg" alt="ZOMZEY logo on light"></div>
+      <div class="row row--night"><img src="assets/img/logo/zomzey-logo-dark.svg" alt="ZOMZEY logo on dark"></div>
+      <div class="row row--violet"><img src="assets/img/logo/zomzey-logo-dark.svg" alt="ZOMZEY logo on violet"></div>
+      <p class="fav"><img src="assets/img/favicon.svg" alt="" width="16" height="16"><img src="assets/img/favicon.svg" alt="" width="32" height="32"><img src="assets/img/apple-touch-icon.png" alt="" width="48" height="48" style="border-radius:11px"> Favicon 16 · 32 · app icon</p>
+    </div>
     <div>
       <p class="meta">Components</p>
       <div class="parts">
@@ -236,7 +249,7 @@
       </div>
     </div>
   </div>
-  <div class="foot"><span>ZOMZEY · Homepage redesign concept</span><span>Desktop 1440 · Mobile 390 · Responsive 320–2560 · WCAG 2.2 AA (axe: 0 violations)</span></div>
+  <div class="foot"><span>ZOMZEY · Homepage redesign concept</span><span>Desktop 1440 · Mobile 390 · Responsive 320–2560 · v1.1 polish pass</span></div>
 </section>
 </body>
 </html>

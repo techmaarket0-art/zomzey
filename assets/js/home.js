@@ -164,7 +164,6 @@
     { from: 'maya', fa: 'top', to: 'slipA', ta: 0.24, cls: 'ln', dot: true },
     { from: 'brightshelf', fa: 'top', to: 'slipA', ta: 0.62, cls: 'ln', dot: true },
     { from: 'lantern', fa: 'top', to: 'slipB', ta: 0.42, cls: 'ln', dot: true },
-    { from: 'agency', fa: 'top', to: 'slipB', ta: 0.82, cls: 'ln', dot: true },
     { from: 'offerBS', fa: 'bottom', to: 'seal', ta: 'top', cls: 'ln ln--deal', dot: true, deal: true },
     { from: 'maya', fa: 'bottom', to: 'offerMaya', ta: 'top', cls: 'ln', short: true },
     { from: 'brightshelf', fa: 'bottom', to: 'offerBS', ta: 'top', cls: 'ln', short: true },
@@ -255,7 +254,6 @@
       motionBtn.querySelector('span').textContent = paused ? 'Play motion' : 'Pause motion';
       motionBtn.querySelector('use').setAttribute('href', paused ? '#i-play' : '#i-pause');
     }
-    syncTicker();
   }
   if (motionBtn) motionBtn.addEventListener('click', () => {
     paused = !paused;
@@ -267,30 +265,6 @@
   if (stage) {
     new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; syncMotion(); }, { threshold: 0 }).observe(stage);
     new ResizeObserver(debounce(() => { drawStage(); syncMotion(); }, 80)).observe(stage);
-  }
-
-  /* Ticker: new opportunities arriving */
-  const TICKS = [
-    ['Food &amp; drink', 'Bristol — small-batch hot sauce wants cafés &amp; delis'],
-    ['Beauty', 'Online — fragrance-free SPF wants UGC creators'],
-    ['Apps', 'Online — student budgeting app wants finance YouTubers'],
-    ['Travel', 'UK &amp; EU — packable rain shell wants hiking clubs'],
-    ['Kids', 'UK — wooden stacking toys want library storytimes'],
-    ['Events', 'Glasgow — open-mic nights want local creators'],
-  ];
-  const tickItem = $('[data-ticker-item]');
-  let tickI = 0, tickTimer = 0;
-  function syncTicker() {
-    clearInterval(tickTimer);
-    if (!tickItem || paused || !heroVisible || mqMobile.matches) return;
-    tickTimer = setInterval(() => {
-      tickItem.classList.add('is-out');
-      setTimeout(() => {
-        tickI = (tickI + 1) % TICKS.length;
-        tickItem.innerHTML = `<b>${TICKS[tickI][0]}</b> · ${TICKS[tickI][1]}`;
-        tickItem.classList.remove('is-out');
-      }, 280);
-    }, 4600);
   }
 
   /* Headline rows highlight their zone of the network */
@@ -315,6 +289,7 @@
   });
 
   /* ---------------- Record: follow one opportunity ---------------- */
+  let resetSteps = null;
   const steps = $$('[data-step]');
   const stepLinks = $$('[data-step-link]');
   const recordList = $('[data-record]');
@@ -340,6 +315,7 @@
       entries.forEach((e) => { if (e.isIntersecting) setActive(e.target.dataset.step); });
     }, { rootMargin: '-45% 0px -50% 0px' });
     steps.forEach((s) => io.observe(s));
+    resetSteps = () => { if (!steps[0].classList.contains('is-active') || stepLinks[0].getAttribute('aria-current') !== 'step') setActive('posted'); };
     // leaving the section upwards resets the stage chips to the start
     const recordSec = $('#how');
     if (recordSec) new IntersectionObserver(([e]) => { if (!e.isIntersecting && e.boundingClientRect.top > 0) setActive('posted'); }).observe(recordSec);
@@ -369,6 +345,8 @@
     updateRail();
   }
   function updateRail() {
+    // above the record entirely → the stage chips start again at 01
+    if (recordList && recordList.getBoundingClientRect().top > window.innerHeight && typeof resetSteps === 'function') resetSteps();
     if (!rail || rail.hidden) return;
     const r = recordList.getBoundingClientRect();
     const mid = window.innerHeight * 0.55;
@@ -413,17 +391,17 @@
     if (!btn) return;
     const b = btn.getBoundingClientRect();
     const by = b.top + b.height / 2 - map.top;
-    const left = b.left - map.left - 16, right = b.right - map.left + 16;
-    const textRect = (li) => {
-      const range = document.createRange();
-      range.selectNodeContents(li);
-      return range.getBoundingClientRect();
-    };
+    const left = b.left - map.left - 14, right = b.right - map.left + 14;
+    const textRect = (li) => li.getBoundingClientRect();
+    // lines run level out of the Pioneer column, then fan out inside the gutter (never across labels)
+    const pioCol = btn.closest('.index__col').getBoundingClientRect();
+    const gutL = pioCol.left - map.left, gutR = pioCol.right - map.left;
     const mk = (x1, y1, x2, y2, i) => {
-      const mx = (x1 + x2) / 2;
-      const p = el('path', { d: `M${x1} ${y1} C${mx} ${y1} ${mx} ${y2} ${x2} ${y2}` });
+      const xg = x2 < x1 ? Math.min(x1, gutL) : Math.max(x1, gutR);
+      const mx = (xg + x2) / 2;
+      const p = el('path', { d: `M${x1} ${y1} L${xg} ${y1} C${mx} ${y1} ${mx} ${y2} ${x2} ${y2}` });
       indexSvg.appendChild(p);
-      const c = el('circle', { cx: x2, cy: y2, r: 3.2 });
+      const c = el('circle', { cx: x2, cy: y2, r: 4.5 });
       indexSvg.appendChild(c);
       if (animate && !mqReduce.matches) {
         const len = p.getTotalLength();
@@ -440,14 +418,12 @@
     let i = 0;
     $$('[data-index-list="inf"] li.is-match', indexEl).forEach((li) => {
       const r = textRect(li);
-      mk(left, by, r.right - map.left + 12, r.top + r.height / 2 - map.top, i++);
+      mk(left, by, r.right - map.left + 2, r.top + r.height / 2 - map.top, i++);
     });
     $$('[data-index-list="hub"] li.is-match', indexEl).forEach((li) => {
       const r = textRect(li);
-      mk(right, by, r.left - map.left - 12, r.top + r.height / 2 - map.top, i++);
+      mk(right, by, r.left - map.left - 2, r.top + r.height / 2 - map.top, i++);
     });
-    indexSvg.appendChild(el('circle', { cx: left, cy: by, r: 3.2 }));
-    indexSvg.appendChild(el('circle', { cx: right, cy: by, r: 3.2 }));
   }
   if (indexEl) {
     $$('[data-pio]', indexEl).forEach((b) => b.addEventListener('click', () => selectPioneer(b.dataset.pio)));
@@ -460,6 +436,8 @@
   function applyFilter(f) {
     if (!board) return;
     $$('[data-filter]', board).forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.filter === f)));
+    const grid = $('[data-board-grid]', board);
+    if (grid) grid.dataset.showing = f;
     let n = 0;
     $$('.board__item', board).forEach((it) => {
       const show = f === 'all' || it.dataset.cat === f;
@@ -492,17 +470,25 @@
       const btn = e.target.closest('[data-open-brief]');
       if (!btn) return;
       const card = btn.closest('.slip');
-      const title = btn.textContent.trim();
+      const title = btn.textContent.trim().replace(/\u2011/g, '-').replace(/\u00a0/g, ' ');
       const tag = card.querySelector('.tag').outerHTML;
       const art = card.querySelector('.art svg');
-      const facts = card.querySelector('.slip__meta').cloneNode(true);
+      const facts = document.createElement('dl');
       facts.className = 'rec__facts';
-      const offers = card.querySelector('.slip__offers').textContent.trim().replace(/^\D*/, '');
+      const add = (k, v) => { if (!v) return; const d = document.createElement('div'); const dt = document.createElement('dt'); const dd = document.createElement('dd'); dt.textContent = k; dd.textContent = v; d.append(dt, dd); facts.appendChild(d); };
+      const metaVal = (label) => { const m = [...card.querySelectorAll('.slip__meta div')].find((d) => d.querySelector('dt').textContent.trim() === label); return m ? m.querySelector('dd').textContent.trim() : ''; };
+      const loc = card.querySelector('.slip__loc');
+      const offersEl = card.querySelector('.slip__offers').cloneNode(true);
+      offersEl.querySelectorAll('.slip__time, .roster').forEach((n) => n.remove());
       const price = card.querySelector('.slip__price');
-      const add = (k, v) => { const d = document.createElement('div'); d.innerHTML = `<dt>${k}</dt><dd>${v}</dd>`; facts.appendChild(d); };
-      if (price && !facts.querySelector('.slip__price')) add('Budget', price.textContent);
-      add('Offers so far', offers);
-      briefBody.innerHTML = `${tag}<div class="brief__art">${art ? art.outerHTML : ''}</div><h2 class="brief__title" id="brief-title">${title}</h2><p class="brief__text">${BRIEFS[title] || ''}</p>`;
+      add('Wants', card.dataset.wants || metaVal('Wants'));
+      add('Where', loc ? loc.textContent.replace('Where:', '').trim() : metaVal('Where'));
+      add('Budget', price ? price.textContent.trim() : '');
+      add('Offers so far', offersEl.textContent.trim());
+      const status = card.querySelector('.slip__head .status');
+      briefBody.innerHTML = `<div class="brief__tags">${tag}${status ? status.outerHTML : ''}</div><div class="brief__art">${art ? art.outerHTML : ''}</div><h2 class="brief__title" id="brief-title"></h2><p class="brief__text"></p>`;
+      briefBody.querySelector('.brief__title').textContent = title;
+      briefBody.querySelector('.brief__text').textContent = BRIEFS[title] || '';
       briefBody.appendChild(facts);
       briefOpener = btn;
       brief.showModal();
@@ -552,7 +538,7 @@
 
   /* ---------------- Reveal ---------------- */
   if (!mqReduce.matches && 'IntersectionObserver' in window) {
-    const targets = $$('.record__head > *, .index__head > *, .board__head > *, .doors__head h2, .door, .finale__title, .finale__side, .index__agency, .doors__extra');
+    const targets = $$('.record__head > *, .index__head > *, .board__head > *, .doors__head h2, .door, .finale__title, .finale__side, .index__agency');
     targets.forEach((t) => t.setAttribute('data-reveal', ''));
     const rio = new IntersectionObserver((entries) => {
       entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); rio.unobserve(e.target); } });

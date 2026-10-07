@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ZOMZEY — Style guide</title>
   <meta name="description" content="ZOMZEY design system: shape grammar, colour, type, components and interaction states.">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/bricolage-grotesque-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
@@ -126,11 +128,8 @@
 
   <header class="sg-top">
     <div class="sg-top__brand">
-      <a class="logo" href="index.html" aria-label="Back to the ZOMZEY homepage">
-        <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="2" fill="currentColor"/><path d="M9.5 10.5h13l-13 11h13" fill="none" stroke="#f3f0e8" stroke-width="2.6" stroke-linejoin="round"/><circle cx="9.5" cy="10.5" r="2.6" fill="var(--violet)"/><circle cx="22.5" cy="21.5" r="2.6" fill="var(--violet)"/></svg>
-        <span class="logo__word">ZOMZEY</span>
-      </a>
-      <p class="kicker">Design system · v1.0 · Homepage concept</p>
+      <a class="logo" href="index.html" aria-label="Back to the ZOMZEY homepage"><img class="logo__img" src="assets/img/logo/zomzey-logo-light.svg" alt="" width="123" height="32"></a>
+      <p class="kicker">Design system · v1.1 · Homepage concept</p>
       <h1 style="margin-top:18px">Post. Pitch. Paid.<br>The system.</h1>
     </div>
     <div class="sg-top__rule" aria-label="Shape grammar">
@@ -141,9 +140,36 @@
     </div>
   </header>
 
-  <!-- 01 Shape grammar -->
+
+  <!-- 01 Logo -->
+  <section class="sg-sec" aria-labelledby="sg-logo">
+    <div class="sg-sec__label"><p class="meta">01</p><h2 id="sg-logo">Logo system</h2><p>The same Z connecting two nodes — redrawn on one module so it is crisp from favicon to app icon.</p></div>
+    <div class="sg-sec__body">
+      <div class="sg-logos">
+        <figure class="sg-logo sg-logo--paper"><img src="assets/img/logo/zomzey-logo-light.svg" alt="ZOMZEY horizontal logo for light backgrounds" width="246" height="64"><figcaption>Primary · light grounds</figcaption></figure>
+        <figure class="sg-logo sg-logo--night"><img src="assets/img/logo/zomzey-logo-dark.svg" alt="ZOMZEY horizontal logo for dark backgrounds" width="246" height="64"><figcaption>Dark grounds · raised tile, lifted nodes</figcaption></figure>
+        <figure class="sg-logo sg-logo--violet"><img src="assets/img/logo/zomzey-logo-dark.svg" alt="ZOMZEY logo on Signal Violet" width="246" height="64"><figcaption>On Signal Violet · always the dark lock-up</figcaption></figure>
+      </div>
+      <div class="sg-marks">
+        <figure><div class="sg-marks__row"><img src="assets/img/logo/zomzey-mark.svg" alt="ZOMZEY mark" width="96" height="96"><img src="assets/img/logo/zomzey-mark-dark.svg" alt="ZOMZEY mark for dark backgrounds" width="96" height="96" class="on-dark-chip"></div><figcaption>Icon-only mark · light / dark</figcaption></figure>
+        <figure><div class="sg-marks__row sg-marks__row--fav"><img src="assets/img/favicon.svg" alt="" width="16" height="16"><img src="assets/img/favicon.svg" alt="" width="32" height="32"><span class="sg-tab"><img src="assets/img/favicon.svg" alt="" width="16" height="16">ZOMZEY — Post. Pitch. Paid.</span></div><figcaption>Favicon cut · drawn on a 16px grid · 16 / 32</figcaption></figure>
+        <figure><div class="sg-marks__row"><img src="assets/img/apple-touch-icon.png" alt="ZOMZEY app icon" width="90" height="90" class="sg-appicon"></div><figcaption>App icon · full-bleed, OS masks the corners</figcaption></figure>
+      </div>
+      <div class="sg-two">
+        <ul class="sg-rules" role="list">
+          <li><b>Construction</b> 32-unit tile, one module (s = 3) sets bar weight, node radius and corner radius. Nodes sit exactly where they always did — the Z still connects two points.</li>
+          <li><b>Lock-up</b> Wordmark cap height = Z height, so tile and word share one horizon. Gap = 10 units. Clear space = ¼ tile on every side.</li>
+          <li><b>Sizes</b> Lock-up ≥ 20px tall (header: 32px desktop, 26px mobile). Mark ≥ 24px. Below that use the favicon cut.</li>
+          <li><b>Don’t</b> put the ink wordmark on violet, recolour the nodes (green means money), add gradients, shadows or outlines, or set the wordmark as live text.</li>
+        </ul>
+        <figure class="sg-before"><div><span class="meta">Before</span><img src="assets/img/logo/zomzey-logo-before.svg" alt="Previous ZOMZEY logo" height="34"></div><div><span class="meta">After</span><img src="assets/img/logo/zomzey-logo-light.svg" alt="Refined ZOMZEY logo" height="34"></div><figcaption>Heavier, sharper Z with the nodes integrated as its terminals; de-condensed wordmark (Bricolage 620, 96% width, optical size 14), outlined.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 Shape grammar -->
   <section class="sg-sec" aria-labelledby="sg-shape">
-    <div class="sg-sec__label"><p class="meta">01</p><h2 id="sg-shape">Shape grammar</h2><p>Every module tells you what it is before you read it.</p></div>
+    <div class="sg-sec__label"><p class="meta">02</p><h2 id="sg-shape">Shape grammar</h2><p>Every module tells you what it is before you read it.</p></div>
     <div class="sg-sec__body">
       <div class="sg-grammar">
         <div><div class="shape"><i style="width:64px;height:64px;border-radius:2px"></i></div><b>Square · sharp</b><p>Opportunities, briefs, offers, money. Pioneer avatars. Radius 2px.</p></div>
@@ -156,7 +182,7 @@
 
   <!-- 02 Colour -->
   <section class="sg-sec" aria-labelledby="sg-colour">
-    <div class="sg-sec__label"><p class="meta">02</p><h2 id="sg-colour">Colour</h2><p>Paper and ink do the work. One accent for action and connection; one signal reserved for protected money.</p></div>
+    <div class="sg-sec__label"><p class="meta">03</p><h2 id="sg-colour">Colour</h2><p>Paper and ink do the work. One accent for action and connection; one signal reserved for protected money.</p></div>
     <div class="sg-sec__body">
       <div>
         <p class="sg-cap">Primary &amp; signal</p>
@@ -193,29 +219,31 @@
 
   <!-- 03 Type -->
   <section class="sg-sec" aria-labelledby="sg-type">
-    <div class="sg-sec__label"><p class="meta">03</p><h2 id="sg-type">Typography</h2><p>A characterful display face for statements, a quiet interface face for reading, and a mono for precise listing data.</p></div>
+    <div class="sg-sec__label"><p class="meta">04</p><h2 id="sg-type">Typography</h2><p>A characterful display face for statements, a quiet interface face for reading, and a mono for precise listing data.</p></div>
     <div class="sg-sec__body">
       <div class="sg-specimen">
-        <div><p class="sg-cap">Display · Bricolage Grotesque</p><p class="big">Post.<br>Pitch.</p><p class="desc">Variable weight, width and optical size. Set at 78–86% width, tight tracking. Headlines, statements, listing titles.</p></div>
-        <div><p class="sg-cap">Interface · Geist</p><p class="ui">Aa Gg 12</p><p class="desc">Body copy, navigation, buttons, forms. Highly legible from 12px.</p></div>
-        <div><p class="sg-cap">Data · Geist Mono</p><p class="mono">£180 · 2h</p><p class="desc">Prices, locations, timestamps, statuses — listings read like precise tickets.</p></div>
+        <div><p class="sg-cap">Headlines · Bricolage Grotesque</p><p class="big">Post.<br>Pitch.</p><p class="desc">De-condensed (98–100% width). Hero 580, every section heading 550. Headlines only — never cards, prices or labels.</p></div>
+        <div><p class="sg-cap">Reading · Geist</p><p class="ui">£180 · 2h</p><p class="desc">Everything people scan: body, cards, listing titles, labels, buttons — and all money, in tabular figures.</p></div>
+        <div><p class="sg-cap">Record · Geist Mono</p><p class="mono">ZM-24817</p><p class="desc">Only the deal record’s document data: IDs and field labels on the receipt.</p></div>
       </div>
       <div class="sg-scale">
-        <div><span class="meta">Hero</span><span class="meta">60–168 · 0.85 · −3.4%</span><span class="sample" style="font-family:var(--font-display);font-weight:700;font-stretch:80%;font-size:64px;line-height:.9;letter-spacing:-.034em">Post. Pitch. Paid.</span></div>
-        <div><span class="meta">Display 1</span><span class="meta">44–104 · 0.88</span><span class="sample d1" style="font-size:52px">One brief. Four offers.</span></div>
-        <div><span class="meta">Display 2</span><span class="meta">34–64 · 0.98</span><span class="sample d2" style="font-size:40px">Opportunities, just posted.</span></div>
-        <div><span class="meta">Display 3</span><span class="meta">26–38 · 1.04</span><span class="sample d3">The right people pitch to you.</span></div>
-        <div><span class="meta">Heading 4</span><span class="meta">20–24 · 1.15</span><span class="sample h4">Campaign Brief Generator</span></div>
-        <div><span class="meta">Lead</span><span class="meta">17–20 · 1.5</span><span class="sample lead" style="max-width:none">Pioneers post, members pitch to win.</span></div>
+        <div><span class="meta">Hero</span><span class="meta">56–136 · 580 · 98%</span><span class="sample" style="font-family:var(--font-display);font-weight:580;font-stretch:98%;font-size:60px;line-height:.95;letter-spacing:-.03em">Post. Pitch. Paid.</span></div>
+        <div><span class="meta">Finale</span><span class="meta">44–108 · 560</span><span class="sample" style="font-family:var(--font-display);font-weight:560;font-stretch:98%;font-size:44px;line-height:1;letter-spacing:-.032em">Your next opportunity</span></div>
+        <div><span class="meta">Section · d1</span><span class="meta">34–70 · 550 · 100%</span><span class="sample d1" style="font-size:40px">That was one book.</span></div>
+        <div><span class="meta">Panel · d2</span><span class="meta">28–42 · 550</span><span class="sample d2" style="font-size:32px">I have something to promote.</span></div>
+        <div><span class="meta">Step · d3</span><span class="meta">22–30 · 550</span><span class="sample d3">The right people pitch to you.</span></div>
+        <div><span class="meta">Card title</span><span class="meta">Geist 600 · 20</span><span class="sample h4">Small-batch hot sauce</span></div>
+        <div><span class="meta">Lead</span><span class="meta">17–19 · 1.5</span><span class="sample lead" style="max-width:none">See every brief, budget and offer count before you sign up.</span></div>
         <div><span class="meta">Body</span><span class="meta">16 · 1.55</span><span class="sample body">Money is held safely and only released when the work is approved.</span></div>
-        <div><span class="meta">Meta</span><span class="meta">12 · mono · caps</span><span class="sample meta">Wants · Where · Budget · Posted 2h ago</span></div>
+        <div><span class="meta">Label</span><span class="meta">Geist 500 · 13–14</span><span class="sample kicker">Who’s here</span></div>
+        <div><span class="meta">Record</span><span class="meta">Mono · 11 · caps</span><span class="sample meta">Wants · Where · Budget · ZM-24817</span></div>
       </div>
     </div>
   </section>
 
   <!-- 04 Actions -->
   <section class="sg-sec" aria-labelledby="sg-actions">
-    <div class="sg-sec__label"><p class="meta">04</p><h2 id="sg-actions">Buttons &amp; links</h2><p>"Ticket stub" buttons: a sharp body and a perforated arrow stub. Avoids pills; reads as an action you can tear off.</p></div>
+    <div class="sg-sec__label"><p class="meta">05</p><h2 id="sg-actions">Buttons &amp; links</h2><p>"Ticket stub" buttons: a sharp body and a perforated arrow stub. Avoids pills; reads as an action you can tear off.</p></div>
     <div class="sg-sec__body">
       <div>
         <p class="sg-cap">Variants</p>
@@ -248,7 +276,7 @@
 
   <!-- 05 Tags, chips, status -->
   <section class="sg-sec" aria-labelledby="sg-tags">
-    <div class="sg-sec__label"><p class="meta">05</p><h2 id="sg-tags">Tags, chips &amp; status</h2><p>Mono tags label categories. Square chips filter. Status dots carry deal state — colour plus shape, never colour alone.</p></div>
+    <div class="sg-sec__label"><p class="meta">06</p><h2 id="sg-tags">Tags, chips &amp; status</h2><p>Filled tags name categories. Square chips filter. Status markers carry state — colour plus shape, never colour alone.</p></div>
     <div class="sg-sec__body">
       <div class="sg-two">
         <div>
@@ -267,7 +295,9 @@
           <p class="sg-cap">Deal status</p>
           <div class="sg-row" style="font-size:16px">
             <span class="status status--draft">Draft</span>
+            <span class="status status--new">New</span>
             <span class="status status--open">Open</span>
+            <span class="status status--closing">Closing soon</span>
             <span class="status status--live">Live</span>
             <span class="status status--agreed">Agreed</span>
             <span class="status status--held">Held</span>
@@ -302,35 +332,34 @@
 
   <!-- 06 Modules -->
   <section class="sg-sec" aria-labelledby="sg-modules">
-    <div class="sg-sec__label"><p class="meta">06</p><h2 id="sg-modules">Marketplace modules</h2><p>The same parts build the hero network, the deal record, the board and future product screens.</p></div>
+    <div class="sg-sec__label"><p class="meta">07</p><h2 id="sg-modules">Marketplace modules</h2><p>The same parts build the hero network, the deal record, the board and future product screens.</p></div>
     <div class="sg-sec__body">
       <div class="sg-cards">
         <div>
           <p class="sg-cap">Opportunity slip</p>
           <article class="slip">
-            <header class="slip__head"><span class="tag"><span class="g g--sq" aria-hidden="true"></span>Books</span><span class="status status--open">Open</span></header>
+            <header class="slip__head"><span class="tag"><span class="g g--sq" aria-hidden="true"></span>Books</span><span class="status status--new">New</span></header>
             <div class="slip__body">
               <div class="art"><svg viewBox="0 0 64 80" aria-hidden="true"><use href="#art-book"/></svg></div>
               <div>
                 <h3 class="slip__title">The Quiet Hours</h3>
-                <p class="slip__sub">Debut crime novel</p>
-                <dl class="slip__meta"><div><dt>Wants</dt><dd>Book clubs&nbsp;· Bookshops</dd></div><div><dt>Budget</dt><dd class="slip__price">Up to £250</dd></div></dl>
+                <p class="slip__loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>North West, UK</p>
               </div>
             </div>
-            <footer class="slip__stub"><span class="slip__offers"><span class="roster" aria-hidden="true"><span class="av av--hub" data-tint="sage">BS</span><span class="av av--person" data-tint="rose">MC</span><span class="av av--hub" data-tint="straw">CR</span></span>4 offers</span><span class="slip__time">2h ago</span></footer>
+            <footer class="slip__stub"><span class="slip__offers"><span class="roster" aria-hidden="true"><span class="av av--hub" data-tint="sage">BS</span><span class="av av--person" data-tint="rose">MC</span><span class="av av--hub" data-tint="straw">CR</span></span>4 offers<span class="slip__time"> · 2h ago</span></span><span class="slip__price">Up to £250</span></footer>
           </article>
         </div>
         <div class="sg-panel">
           <p class="sg-cap" style="margin:0">Member · person &amp; place</p>
-          <div class="member"><span class="av av--person" data-tint="rose">MC</span><div><p class="member__name">Maya Chen <svg class="seal seal--verified" aria-label="Verified"><use href="#seal-check"/></svg></p><p class="member__role">BookTok creator&nbsp;· Manchester</p><p class="member__stats"><span><b>8.2k</b> followers</span><span><b>6.1%</b> eng.</span></p></div></div>
+          <div class="member"><span class="av av--person" data-tint="rose">MC</span><div><p class="member__name">Maya Chen <svg class="seal seal--verified" aria-label="Verified"><use href="#seal-check"/></svg></p><p class="member__role">BookTok creator&nbsp;· Manchester</p></div></div>
           <div class="member"><span class="av av--hub" data-tint="sage">BS</span><div><p class="member__name">BrightShelf Books <svg class="seal seal--verified" aria-label="Verified"><use href="#seal-check"/></svg></p><p class="member__role">Independent bookshop&nbsp;· Manchester</p></div></div>
           <div class="member"><span class="roster"><span class="av av--person av--sm" data-tint="mist">JA</span><span class="av av--person av--sm" data-tint="clay">KO</span><span class="av av--person av--sm" data-tint="sand">+</span></span><div><p class="member__name">Northline Talent</p><p class="member__role">Agency&nbsp;· pitching a roster</p></div></div>
         </div>
         <div class="sg-panel">
           <p class="sg-cap" style="margin:0">Offer · protected payment</p>
-          <div class="offer"><span class="av av--hub" data-tint="sage">BS</span><div><p class="offer__who">Offer to R. Okafor</p><p class="offer__what">Front table, 4 weeks + author evening</p></div><span class="offer__price">£180</span></div>
-          <div class="offer offer--active"><span class="av av--person" data-tint="rose">MC</span><div><p class="offer__who">Selected offer</p><p class="offer__what">Review video + 3 stories</p></div><span class="offer__price">£120</span></div>
-          <div class="held"><svg class="held__seal" aria-hidden="true"><use href="#seal-lock"/></svg><div><p class="held__amount"><span class="num">£180</span> held</p><p class="held__copy">Released when the work is approved.</p></div><p class="held__by">Protected Payments · powered by Stripe</p></div>
+          <div class="offer"><span class="av av--hub" data-tint="sage">BS</span><p class="offer__what">Front table + author evening</p><span class="offer__price">£180</span></div>
+          <div class="offer offer--active"><span class="av av--person" data-tint="rose">MC</span><p class="offer__what">Review video + 3 stories</p><span class="offer__price">£120</span></div>
+          <div class="held"><svg class="held__seal" aria-hidden="true"><use href="#seal-lock"/></svg><div><p class="held__amount"><span class="num">£180</span> held</p><p class="held__copy">Released when the work is approved</p></div></div>
         </div>
       </div>
     </div>
@@ -338,7 +367,7 @@
 
   <!-- 07 Forms -->
   <section class="sg-sec" aria-labelledby="sg-forms">
-    <div class="sg-sec__label"><p class="meta">07</p><h2 id="sg-forms">Search &amp; forms</h2><p>Sharp fields, 52px targets, violet focus with a soft halo. The sentence builder turns search into plain language.</p></div>
+    <div class="sg-sec__label"><p class="meta">08</p><h2 id="sg-forms">Search &amp; forms</h2><p>Sharp fields, 52px targets, violet focus with a soft halo. The sentence builder turns search into plain language.</p></div>
     <div class="sg-sec__body">
       <div class="sg-two">
         <div style="display:grid;gap:18px">
@@ -373,7 +402,7 @@
 
   <!-- 08 Space, shape, motion -->
   <section class="sg-sec" aria-labelledby="sg-space">
-    <div class="sg-sec__label"><p class="meta">08</p><h2 id="sg-space">Space, radius &amp; motion</h2><p>A 4px base. Generous section rhythm; dense, precise listings. Motion only explains.</p></div>
+    <div class="sg-sec__label"><p class="meta">09</p><h2 id="sg-space">Space, radius &amp; motion</h2><p>A 4px base. Generous section rhythm; dense, precise listings. Motion only explains.</p></div>
     <div class="sg-sec__body">
       <div class="sg-two">
         <div class="sg-space">

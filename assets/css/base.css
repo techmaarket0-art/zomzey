@@ -47,22 +47,26 @@ h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
 .skip-link:focus { top: 12px; }
 
 /* ---------- Typography ---------- */
+/* Headline voice: Bricolage de-condensed (100% width), one weight for every
+   section-level heading. Only the hero and finale go bolder. */
 .display, .d1, .d2, .d3 {
   font-family: var(--font-display);
-  font-weight: 650;
-  font-stretch: 84%;
+  font-weight: var(--w-display);
+  font-stretch: 100%;
   letter-spacing: var(--track-display);
   font-optical-sizing: auto;
   text-wrap: balance;
 }
-.d1 { font-size: var(--fs-d1); line-height: var(--lh-tight); }
-.d2 { font-size: var(--fs-d2); line-height: var(--lh-display); }
-.d3 { font-size: var(--fs-d3); line-height: 1.04; letter-spacing: -0.025em; }
-.h4 { font-family: var(--font-display); font-weight: 600; font-stretch: 92%; font-size: var(--fs-h4); line-height: 1.15; letter-spacing: -0.015em; }
+.d1 { font-size: var(--fs-d1); line-height: var(--lh-tight); letter-spacing: -0.03em; }
+.d2 { font-size: var(--fs-d2); line-height: var(--lh-display); letter-spacing: -0.025em; }
+.d3 { font-size: var(--fs-d3); line-height: 1.16; letter-spacing: -0.02em; }
+/* Reading voice for anything people scan: card titles, listing names */
+.h4 { font-family: var(--font-ui); font-weight: 600; font-size: var(--fs-h4); line-height: 1.2; letter-spacing: -0.015em; }
 .lead { font-size: var(--fs-lead); line-height: 1.5; color: var(--ink-2); text-wrap: pretty; max-width: 40ch; }
 .body { color: var(--ink-2); text-wrap: pretty; }
 .small { font-size: var(--fs-small); }
-.meta, .kicker {
+/* Record voice (mono) is for data on the deal record only — IDs, field labels */
+.meta {
   font-family: var(--font-mono);
   font-size: var(--fs-meta);
   font-weight: 500;
@@ -70,9 +74,15 @@ h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
   text-transform: uppercase;
   color: var(--ink-3);
 }
-.kicker { display: inline-flex; align-items: center; gap: 10px; color: var(--ink-2); }
+/* Eyebrows are calm sentence-case captions */
+.kicker {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-ui); font-size: 0.875rem; font-weight: 500; line-height: 1.3;
+  letter-spacing: 0; color: var(--ink-2);
+}
 .kicker::before { content: ""; width: 18px; height: 1px; background: currentColor; }
-.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+/* Numbers people compare (money, counts) are tabular Geist — plain, trustworthy figures */
+.num { font-variant-numeric: tabular-nums; }
 .accent { color: var(--violet); }
 
 /* ---------- Links ---------- */
@@ -141,12 +151,15 @@ h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
 /* ---------- Tags ---------- */
 .tag {
   display: inline-flex; align-items: center; gap: 0.5em;
-  height: 1.9em; padding: 0 0.65em;
-  font-family: var(--font-mono); font-size: 0.6875em; font-weight: 500;
-  letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap;
-  color: var(--ink-2); border: 1px solid var(--line); border-radius: var(--r-thing);
-  background: transparent;
+  height: 2em; padding: 0 0.7em;
+  font-family: var(--font-ui); font-size: max(12px, 0.75em); font-weight: 550;
+  letter-spacing: 0; white-space: nowrap;
+  color: var(--ink); border: 1px solid transparent; border-radius: var(--r-thing);
+  background: var(--paper-2);
 }
+.tag .g { font-size: 0.85em; }
+.tag--line { background: transparent; border-color: var(--line); color: var(--ink-2); }
+.tag--ad { height: 1.75em; padding: 0 0.55em; font-size: 0.8125em; background: var(--paper-2); color: var(--ink-2); vertical-align: 1px; margin-left: 4px; }
 .tag--ink { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 .tag--violet { background: var(--violet-soft); border-color: transparent; color: var(--violet-press); }
 .tag--green { background: var(--green-soft); border-color: transparent; color: var(--green); }
@@ -169,12 +182,16 @@ h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
 /* ---------- Status indicators ---------- */
 .status {
   display: inline-flex; align-items: center; gap: 0.5em;
-  font-family: var(--font-mono); font-size: 0.6875em; font-weight: 500;
-  letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap;
+  font-family: var(--font-ui); font-size: max(12px, 0.75em); font-weight: 550;
+  letter-spacing: 0; text-transform: none; white-space: nowrap;
   color: var(--ink-2);
 }
-.status::before { content: ""; width: 0.62em; height: 0.62em; border-radius: 50%; background: currentColor; flex: none; }
-.status--open { color: var(--violet); }
+.status::before { content: ""; width: 0.55em; height: 0.55em; border-radius: 50%; background: currentColor; flex: none; }
+.status--open { color: var(--ink-2); }
+.status--open::before { background: var(--violet); }
+.status--new { color: var(--violet); }
+.status--closing { color: var(--ink); }
+.status--closing::before { background: transparent; box-shadow: inset 0 0 0 1.5px currentColor; }
 .status--live { color: var(--violet); }
 .status--live::before { box-shadow: 0 0 0 0 color-mix(in srgb, var(--violet) 50%, transparent); animation: pulse 2.4s var(--ease-out) infinite; }
 .status--agreed { color: var(--ink); }
@@ -250,12 +267,13 @@ h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
   display: flex; align-items: center; justify-content: space-between; gap: 0.75em;
   padding: 0.85em 1em 0;
 }
-.slip__time { font-family: var(--font-mono); font-size: 0.6875em; color: var(--ink-3); letter-spacing: 0.02em; white-space: nowrap; }
+.slip__time { color: var(--ink-3); font-weight: 450; white-space: pre; }
+.slip__offers .slip__time { margin-left: -0.6em; }
 .slip__body { display: grid; grid-template-columns: auto 1fr; gap: 0.95em; padding: 0.9em 1em 1em; align-items: start; flex: 1; }
 .slip__body--noart { grid-template-columns: 1fr; }
 .slip__title {
-  font-family: var(--font-display); font-weight: 650; font-stretch: 86%;
-  font-size: 1.45em; line-height: 1.02; letter-spacing: -0.025em;
+  font-family: var(--font-ui); font-weight: 600;
+  font-size: 1.25em; line-height: 1.18; letter-spacing: -0.018em;
   text-wrap: balance;
 }
 .slip__sub { font-size: 0.8125em; color: var(--ink-2); margin-top: 0.3em; line-height: 1.35; }
@@ -263,9 +281,12 @@ h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
 .slip__by .av { --av: 1.6em; }
 .slip__meta { display: grid; gap: 0.35em; margin-top: 0.85em; font-size: 0.8125em; }
 .slip__meta div { display: grid; grid-template-columns: 5.6em 1fr; gap: 0.5em; align-items: baseline; }
-.slip__meta dt { font-family: var(--font-mono); font-size: 0.82em; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-3); }
+.slip__meta dt { color: var(--ink-3); font-weight: 400; }
 .slip__meta dd { color: var(--ink); font-weight: 500; line-height: 1.3; }
-.slip__price { font-family: var(--font-mono); font-weight: 600; letter-spacing: -0.01em; }
+.slip__loc { display: flex; align-items: center; gap: 0.35em; margin-top: 0.45em; font-size: 0.875em; color: var(--ink-2); }
+.slip__loc .icon { width: 1.05em; height: 1.05em; color: var(--ink-3); }
+.slip__price { font-weight: 650; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; color: var(--ink); white-space: nowrap; }
+.slip__stub .slip__price { font-size: 1.0625em; }
 .slip__stub {
   height: var(--stub);
   display: flex; align-items: center; justify-content: space-between; gap: 0.75em;
@@ -273,7 +294,7 @@ h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
   background-image: linear-gradient(90deg, var(--line-strong) 55%, transparent 0);
   background-size: 7px 1px; background-repeat: repeat-x; background-position: 0 0;
 }
-.slip__offers { display: flex; align-items: center; gap: 0.6em; font-size: 0.8125em; font-weight: 500; }
+.slip__offers { display: flex; align-items: center; gap: 0.6em; font-size: 0.8125em; font-weight: 500; color: var(--ink-2); white-space: nowrap; }
 .slip__offers .roster .av { --av: 1.5em; color: transparent; }
 .slip__offers .roster .av + .av { margin-left: -0.35em; }
 
@@ -306,8 +327,8 @@ h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
 }
 .offer .av { --av: 2em; }
 .offer__who { font-size: 0.75em; color: var(--ink-3); line-height: 1.2; }
-.offer__what { font-size: 0.8125em; font-weight: 550; line-height: 1.25; color: var(--ink); }
-.offer__price { font-family: var(--font-mono); font-weight: 600; font-size: 0.875em; padding-left: 0.7em; border-left: 1px dashed var(--line-strong); align-self: stretch; display: grid; place-items: center; }
+.offer__what { font-size: 0.8125em; font-weight: 550; line-height: 1.25; color: var(--ink); min-width: 0; }
+.offer__price { font-weight: 650; font-variant-numeric: tabular-nums; font-size: 0.9375em; padding-left: 0.7em; border-left: 1px dashed var(--line-strong); align-self: stretch; display: grid; place-items: center; }
 .offer--active { border-color: var(--violet); box-shadow: 0 0 0 1px var(--violet); }
 
 /* ---------- Form controls ---------- */
