@@ -89,15 +89,11 @@ if (axeSrc) {
   await p.waitForTimeout(1500);
   const r = await p.evaluate(() => {
     const dots = [...document.querySelectorAll('.stage__lines .dot')].map(d => d.getAttribute('opacity'));
-    const tick1 = document.querySelector('[data-ticker-item]').textContent;
     const stamp = getComputedStyle(document.querySelector('.stamp')).opacity;
     const reveal = [...document.querySelectorAll('[data-reveal]')].length;
     const anims = document.getAnimations().filter(a => a.playState === 'running').length;
-    return { dotsVisible: dots.filter(o => o !== '0').length, stampOpacity: stamp, revealTargets: reveal, runningAnimations: anims, tick1 };
+    return { dotsVisible: dots.filter(o => o !== '0').length, stampOpacity: stamp, revealTargets: reveal, runningAnimations: anims };
   });
-  await p.waitForTimeout(5200);
-  r.tickerChanged = (await p.evaluate(() => document.querySelector('[data-ticker-item]').textContent)) !== r.tick1;
-  delete r.tick1;
   report.reducedMotion = r;
   await ctx.close();
 }

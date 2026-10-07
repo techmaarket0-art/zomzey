@@ -1,6 +1,6 @@
 {
   "base": "http://localhost:4310/",
-  "when": "2026-10-07T21:03:10.504Z",
+  "when": "2026-10-07T23:33:27.948Z",
   "overflow": [
     {
       "page": "index.html",
@@ -248,21 +248,21 @@
       "page": "index.html",
       "w": 1440,
       "violations": [],
-      "passes": 50,
-      "incomplete": 2
+      "passes": 52,
+      "incomplete": 1
     },
     {
       "page": "index.html",
       "w": 390,
       "violations": [],
-      "passes": 51,
-      "incomplete": 2
+      "passes": 53,
+      "incomplete": 1
     },
     {
       "page": "styleguide.html",
       "w": 1440,
       "violations": [],
-      "passes": 40,
+      "passes": 43,
       "incomplete": 2
     }
   ],
@@ -284,14 +284,14 @@
       "button \"Find people\" focusRing=true",
       "a \"or post an opportunity — free\" focusRing=true",
       "button \"Pause motion\" focusRing=true",
-      "a \"01 Posted\" focusRing=true",
-      "a \"02 Pitched\" focusRing=true",
-      "a \"03 Agreed\" focusRing=true",
-      "a \"04 Protected\" focusRing=true",
-      "a \"05 Released\" focusRing=true",
       "ul \"Offers received\" focusRing=true",
       "button \"Authors\" focusRing=true",
-      "button \"Musicians & bands\" focusRing=true"
+      "button \"Musicians & bands\" focusRing=true",
+      "button \"Food & drink\" focusRing=true",
+      "button \"Beauty & cosmetics\" focusRing=true",
+      "button \"App & SaaS founders\" focusRing=true",
+      "button \"Course creators\" focusRing=true",
+      "button \"Travel gear makers\" focusRing=true"
     ],
     "intentArrowKeys": {
       "active": "tab-earn",
@@ -303,29 +303,28 @@
     "dotsVisible": 0,
     "stampOpacity": "1",
     "revealTargets": 0,
-    "runningAnimations": 0,
-    "tickerChanged": false
+    "runningAnimations": 0
   },
   "perf": [
     {
       "viewport": "1440x900",
-      "transferKB": 356,
-      "requests": 8,
-      "dcl": 145,
-      "load": 158,
-      "lcp": 256,
+      "transferKB": 361,
+      "requests": 10,
+      "dcl": 98,
+      "load": 111,
+      "lcp": 176,
       "cls": 0,
-      "domNodes": 1293
+      "domNodes": 1182
     },
     {
       "viewport": "390x844",
-      "transferKB": 356,
-      "requests": 8,
-      "dcl": 127,
-      "load": 138,
-      "lcp": 168,
+      "transferKB": 361,
+      "requests": 10,
+      "dcl": 99,
+      "load": 115,
+      "lcp": 136,
       "cls": 0,
-      "domNodes": 1255
+      "domNodes": 1150
     }
   ],
   "console": []

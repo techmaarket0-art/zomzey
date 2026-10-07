@@ -252,6 +252,7 @@
     if (motionBtn) {
       motionBtn.setAttribute('aria-pressed', String(paused));
       motionBtn.querySelector('span').textContent = paused ? 'Play motion' : 'Pause motion';
+      motionBtn.title = paused ? 'Play motion' : 'Pause motion';
       motionBtn.querySelector('use').setAttribute('href', paused ? '#i-play' : '#i-pause');
     }
   }
@@ -295,6 +296,8 @@
   const recordList = $('[data-record]');
   if (steps.length) {
     const setActive = (id) => {
+      const idx = steps.findIndex((x) => x.dataset.step === id);
+      steps.forEach((s, i) => s.classList.toggle('is-passed', i <= idx));
       steps.forEach((s) => {
         const on = s.dataset.step === id;
         s.classList.toggle('is-active', on);
@@ -340,7 +343,7 @@
       rail.appendChild(document.createElement('span'));
       recordList.appendChild(rail);
     }
-    rail.hidden = mqMobile.matches;
+    rail.hidden = !window.matchMedia('(min-width: 1024px)').matches;
     rail.style.left = (paper.offsetLeft - 22) + 'px';
     updateRail();
   }
@@ -439,8 +442,12 @@
     const grid = $('[data-board-grid]', board);
     if (grid) grid.dataset.showing = f;
     let n = 0;
+    const dimMode = !mqMobile.matches;   // desktop/tablet keep the board full and dim the rest
     $$('.board__item', board).forEach((it) => {
       const show = f === 'all' || it.dataset.cat === f;
+      it.classList.toggle('is-dim', dimMode && !show);
+      it.inert = dimMode && !show;
+      if (dimMode) { it.hidden = false; if (show) n++; return; }
       if (show) {
         n++;
         if (it.hidden) { it.hidden = false; it.classList.remove('is-entering'); void it.offsetWidth; it.classList.add('is-entering'); }

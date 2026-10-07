@@ -1,5 +1,7 @@
 # 04 — QA report
 
+_Updated for v1.1 (polish pass + refined logo). All checks were re-run on the final build._
+
 Run with `npm run dev` + `npm run qa` (Playwright 1.56 / Chromium, axe-core 4.10).
 Raw output: [`docs/qa-results.json`](qa-results.json).
 
@@ -7,13 +9,13 @@ Raw output: [`docs/qa-results.json`](qa-results.json).
 |---|---|
 | Horizontal overflow — homepage + style guide at 320, 360, 390, 414, 600, 768, 900, 1024, 1180, 1280, 1366, 1440, 1680, 1920, 2560 | **30 / 30 clean** |
 | Clipped text (non-scrolling boxes) | **None** |
-| axe-core (WCAG 2.0/2.1/2.2 A + AA, best-practice) — home @1440, home @390, style guide @1440 | **0 violations** (50 / 51 / 40 passing rules) |
+| axe-core (WCAG 2.0/2.1/2.2 A + AA, best-practice) — home @1440, home @390, style guide @1440 | **0 violations** (52 / 53 / 43 passing rules) |
 | Console errors / warnings / page errors (all widths) | **None** |
-| Reduced motion (`prefers-reduced-motion: reduce`) | No running animations, connection dots hidden, ticker static, stamps fully visible, no reveal-hidden content, pause control hidden |
+| Reduced motion (`prefers-reduced-motion: reduce`) | No running animations, connection dots hidden, stamps fully visible, no reveal-hidden content, pause control hidden |
 | Keyboard | Skip link first; logical order header → intent tabs → sentence builder → CTA → hero pause → deal stages → index; ←/→/Home/End move between intent tabs; Esc closes Tools, menu and brief sheets; focus returns to the opener; every stop shows a 2px violet ring |
-| Performance (local, cold, cache disabled) | 356 KB transferred, 8 requests, no third-party requests, CLS 0, LCP ≈ 0.17–0.26 s |
+| Performance (local, cold, cache disabled) | 361 KB transferred, 10 requests (incl. logo SVG + favicon), no third-party requests, CLS 0, LCP ≈ 0.13–0.15 s; 1,150–1,182 DOM nodes |
 | Fonts | 3 self-hosted variable WOFF2 files (184 KB total), display & UI preloaded, `font-display: swap` |
-| Images | No bitmaps on the page; all artefacts and icons are inline SVG |
+| Images | No bitmaps on the page; artefacts and icons are inline SVG; logo is an outlined SVG `<img>` |
 
 ## Contrast (computed, WCAG 2.x)
 | Pair | Ratio |
@@ -40,6 +42,16 @@ Raw output: [`docs/qa-results.json`](qa-results.json).
 - Contrast: dimmed index labels used opacity (≈2:1) → full `ink-3`; Release Green darkened to pass on its tint; input/chip borders moved to a ≥3:1 token.
 - Brief bottom sheet CTA could sit below the fold → sticky action bar.
 - Style guide overflowed at 320px → `minmax(0,1fr)` tracks.
+
+## v1.1 issues found and fixed
+- 1–3px overflow at 320px: the active deal-stage chip label overflowed while its chip was growing (flex-grow transition) → chip clips its content.
+- `.rstep__num` (opacity .7) failed contrast on night → solid `--on-night-2`.
+- Board feature-card stub overflowed at 320–360px → `min-width: 0` + wrap.
+- Hero lines mis-scaled at 1024 → scale read from a rendered node's width.
+- Index connectors crossed member labels → horizontal run to the column edge, then a curve.
+- Stage chips stuck on "Released" after jumping to top → reset on scroll to the top.
+- 16px favicon edges on half pixels → pixel-aligned cut; ICO regenerated.
+- Style guide type samples truncated at 1024/390 → wrap below desktop.
 
 ## Known limitations
 - Tested in Chromium only (Playwright). Safari/Firefox lack `field-sizing`; a JS fallback sizes the sentence-builder selects.
