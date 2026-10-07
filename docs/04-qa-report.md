@@ -13,7 +13,7 @@ Raw output: [`docs/qa-results.json`](qa-results.json).
 | Console errors / warnings / page errors (all widths) | **None** |
 | Reduced motion (`prefers-reduced-motion: reduce`) | No running animations, connection dots hidden, stamps fully visible, no reveal-hidden content, pause control hidden |
 | Keyboard | Skip link first; logical order header → intent tabs → sentence builder → CTA → hero pause → deal stages → index; ←/→/Home/End move between intent tabs; Esc closes Tools, menu and brief sheets; focus returns to the opener; every stop shows a 2px violet ring |
-| Performance (local, cold, cache disabled) | 361 KB transferred, 10 requests (incl. logo SVG + favicon), no third-party requests, CLS 0, LCP ≈ 0.13–0.15 s; 1,150–1,182 DOM nodes |
+| Performance (local, cold, cache disabled) | 362 KB transferred, 10 requests (incl. logo SVG + favicon), no third-party requests, CLS 0, LCP ≈ 0.13–0.15 s; 1,150–1,182 DOM nodes |
 | Fonts | 3 self-hosted variable WOFF2 files (184 KB total), display & UI preloaded, `font-display: swap` |
 | Images | No bitmaps on the page; artefacts and icons are inline SVG; logo is an outlined SVG `<img>` |
 
@@ -52,6 +52,12 @@ Raw output: [`docs/qa-results.json`](qa-results.json).
 - Stage chips stuck on "Released" after jumping to top → reset on scroll to the top.
 - 16px favicon edges on half pixels → pixel-aligned cut; ICO regenerated.
 - Style guide type samples truncated at 1024/390 → wrap below desktop.
+- Keyboard/focus (accessibility review): the off-screen mobile dock is now `inert` while hidden; focus rings use paper on the dark Earn door and the dock, and violet on the light receipt (all ≥ 3:1); the offers list is a tab stop only where it scrolls; the aria-hidden hero rail can't take focus; desktop footer headings are no longer tab stops that collapse their column.
+- Stacked sentence-builder selects overlapped tap areas on mobile → 44px line pitch, no overlap.
+- Mobile "Log in" and "ZOMZEY for agencies" raised to 44px targets.
+- Board filter state is re-applied across the 767/768 breakpoint; the live count matches the 5 cards shown on mobile.
+- Brief starter status is a live `role="status"` region linked to the input, with an empty-submit message.
+- Motion toggle keeps one name ("Pause motion") with `aria-pressed`, instead of swapping both.
 
 ## Known limitations
 - Tested in Chromium only (Playwright). Safari/Firefox lack `field-sizing`; a JS fallback sizes the sentence-builder selects.

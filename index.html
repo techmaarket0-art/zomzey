@@ -239,7 +239,7 @@
   <div class="hero__net" data-net>
     <p class="sr-only">Illustration of the ZOMZEY network: an author’s opportunity receives offers from a BookTok creator and an independent bookshop; a band’s tour receives an offer from a Glasgow venue; the accepted £180 offer is held in Protected Payments until the work is approved.</p>
     <p class="hero__railhead" aria-hidden="true"><span class="status status--live">Live on ZOMZEY</span><span class="hero__railhint">Swipe <svg class="icon"><use href="#i-arrow"/></svg></span></p>
-    <div class="stage" aria-hidden="true" data-stage>
+    <div class="stage" aria-hidden="true" tabindex="-1" data-stage>
       <svg class="stage__lines" viewBox="0 0 820 800" preserveAspectRatio="none" data-stage-lines></svg>
 
       <!-- POST zone -->
@@ -752,11 +752,11 @@
       <form class="starter" id="starter-form" action="#join" data-starter>
         <div class="starter__top">
           <label class="starter__label" for="starter-what">What are you promoting?</label>
-          <span class="status status--draft" data-starter-status>Draft</span>
+          <span class="status status--draft" id="starter-status" role="status" data-starter-status>Draft</span>
         </div>
         <div class="starter__bar">
           <svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>
-          <input class="input" id="starter-what" name="what" autocomplete="off" placeholder="A novel, a hot sauce, a tour…" data-starter-what>
+          <input class="input" id="starter-what" aria-describedby="starter-status" name="what" autocomplete="off" placeholder="A novel, a hot sauce, a tour…" data-starter-what>
         </div>
       </form>
       <div class="door__actions">

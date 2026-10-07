@@ -83,6 +83,12 @@ the next. There are fewer small caps labels; the kickers are plain sentence case
 - The hero stage lines were mis-scaled at 1024. The scale is now read from a rendered node.
 - After a jump to top, the stage chips stayed on "Released". They now reset.
 - Two favicon edges sat on half pixels and rendered soft. The 16px cut is now pixel-aligned.
+- Accessibility review:
+  - The hidden mobile dock is `inert`.
+  - Focus rings pass 3:1 on dark and receipt grounds.
+  - The mobile selects no longer have overlapping tap targets.
+  - The board count is accurate and the filter state survives a breakpoint change.
+  - The starter announces its status.
 - Style guide:
   - The rhythm tokens, the night palette and the correct focus-ring copy were added.
   - Type samples no longer truncate on tablet or mobile.

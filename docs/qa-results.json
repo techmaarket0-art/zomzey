@@ -1,6 +1,6 @@
 {
   "base": "http://localhost:4310/",
-  "when": "2026-10-07T23:33:27.948Z",
+  "when": "2026-10-07T23:39:13.531Z",
   "overflow": [
     {
       "page": "index.html",
@@ -284,14 +284,14 @@
       "button \"Find people\" focusRing=true",
       "a \"or post an opportunity — free\" focusRing=true",
       "button \"Pause motion\" focusRing=true",
-      "ul \"Offers received\" focusRing=true",
       "button \"Authors\" focusRing=true",
       "button \"Musicians & bands\" focusRing=true",
       "button \"Food & drink\" focusRing=true",
       "button \"Beauty & cosmetics\" focusRing=true",
       "button \"App & SaaS founders\" focusRing=true",
       "button \"Course creators\" focusRing=true",
-      "button \"Travel gear makers\" focusRing=true"
+      "button \"Travel gear makers\" focusRing=true",
+      "button \"Kids & parenting\" focusRing=true"
     ],
     "intentArrowKeys": {
       "active": "tab-earn",
@@ -308,20 +308,20 @@
   "perf": [
     {
       "viewport": "1440x900",
-      "transferKB": 361,
+      "transferKB": 362,
       "requests": 10,
-      "dcl": 98,
-      "load": 111,
-      "lcp": 176,
+      "dcl": 97,
+      "load": 104,
+      "lcp": 148,
       "cls": 0,
       "domNodes": 1182
     },
     {
       "viewport": "390x844",
-      "transferKB": 361,
+      "transferKB": 362,
       "requests": 10,
-      "dcl": 99,
-      "load": 115,
+      "dcl": 102,
+      "load": 111,
       "lcp": 136,
       "cls": 0,
       "domNodes": 1150

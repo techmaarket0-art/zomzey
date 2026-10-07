@@ -251,7 +251,6 @@
     else routes.forEach((r) => r.dot.setAttribute('opacity', 0));
     if (motionBtn) {
       motionBtn.setAttribute('aria-pressed', String(paused));
-      motionBtn.querySelector('span').textContent = paused ? 'Play motion' : 'Pause motion';
       motionBtn.title = paused ? 'Play motion' : 'Pause motion';
       motionBtn.querySelector('use').setAttribute('href', paused ? '#i-play' : '#i-pause');
     }
@@ -436,8 +435,10 @@
   /* ---------------- Board: filters + brief sheet ---------------- */
   const board = $('[data-board]');
   const countEl = $('[data-board-count]');
+  let currentFilter = 'all';
   function applyFilter(f) {
     if (!board) return;
+    currentFilter = f;
     $$('[data-filter]', board).forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.filter === f)));
     const grid = $('[data-board-grid]', board);
     if (grid) grid.dataset.showing = f;
@@ -453,6 +454,7 @@
         if (it.hidden) { it.hidden = false; it.classList.remove('is-entering'); void it.offsetWidth; it.classList.add('is-entering'); }
       } else it.hidden = true;
     });
+    if (!dimMode && f === 'all') n = Math.min(n, 5);   // mobile feed shows the first five
     if (countEl) countEl.textContent = `${n} opportunit${n === 1 ? 'y' : 'ies'} shown`;
   }
   if (board) $$('[data-filter]', board).forEach((c) => c.addEventListener('click', () => applyFilter(c.dataset.filter)));
@@ -532,7 +534,7 @@
   const dock = $('[data-dock]');
   if (dock) {
     let pastIntent = false, finaleIn = false;
-    const sync = () => dock.classList.toggle('is-visible', pastIntent && !finaleIn);
+    const sync = () => { const on = pastIntent && !finaleIn; dock.classList.toggle('is-visible', on); dock.inert = !on; };
     const intentEl = $('[data-intent-root]');
     if (intentEl) new IntersectionObserver(([e]) => { pastIntent = !e.isIntersecting && e.boundingClientRect.top < 0; sync(); }).observe(intentEl);
     const fin = $('.finale');
@@ -540,7 +542,14 @@
   }
 
   /* ---------------- Footer accordions on mobile ---------------- */
-  const syncFooter = () => $$('.fcol').forEach((d) => { d.open = !mqMobile.matches; });
+  const syncFooter = () => $$('.fcol').forEach((d) => {
+    d.open = !mqMobile.matches;
+    const s = $('summary', d); if (s) s.tabIndex = mqMobile.matches ? 0 : -1;   // static headings on desktop
+  });
+  $$('.fcol summary').forEach((s) => s.addEventListener('click', (e) => { if (!mqMobile.matches) e.preventDefault(); }));
+  const offersList = $('.rec__offers');   // only a tab stop where it scrolls (mobile)
+  const syncOffers = () => { if (offersList) offersList.tabIndex = mqMobile.matches ? 0 : -1; };
+  syncOffers();
   syncFooter();
 
   /* ---------------- Reveal ---------------- */
@@ -557,7 +566,7 @@
   const saved = store.get('zz-intent');
   setIntent(saved === 'earn' ? 'earn' : 'need', { persist: false });
   const relayout = () => { drawStage(); placeRail(); drawIndex(false); syncMotion(); };
-  mqMobile.addEventListener('change', () => { syncFooter(); relayout(); });
+  mqMobile.addEventListener('change', () => { syncFooter(); syncOffers(); relayout(); applyFilter(currentFilter); });
   window.addEventListener('resize', debounce(() => { placeRail(); drawIndex(false); sizeAllPicks(); }, 120));
   const ready = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
   ready.then(() => { sizeAllPicks(); relayout(); });
@@ -578,7 +587,7 @@
   what.addEventListener('input', sync);
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (!what.value.trim()) { what.setAttribute('aria-invalid', 'true'); what.focus(); return; }
+    if (!what.value.trim()) { what.setAttribute('aria-invalid', 'true'); status.textContent = 'Add what you’re promoting'; status.className = 'status status--closing'; what.focus(); return; }
     what.removeAttribute('aria-invalid');
     status.textContent = 'Saved — create your free account to post';
     status.className = 'status status--ready';
